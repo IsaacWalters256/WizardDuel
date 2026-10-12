@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkennokxkid0d"]
+
+[ext_resource type="Script" uid="uid://b0mmhj6cmhao" path="res://NC/Basic/main_node.gd" id="1_i7cby"]
+[ext_resource type="PackedScene" uid="uid://c7iwd83y3wu5d" path="res://NC/Basic/controller_center.tscn" id="2_kgamm"]
+[ext_resource type="PackedScene" uid="uid://lldl8u6fkihu" path="res://NC/Basic/character_creation.tscn" id="3_rw1bg"]
+[ext_resource type="Texture2D" uid="uid://1v4vaf00bgbe" path="res://icon.svg" id="4_rfdnl"]
+[ext_resource type="Texture2D" uid="uid://bfujncryfyp21" path="res://Art/UISprites/PlayerSelection/Mines1.png" id="5_s1xft"]
+[ext_resource type="Texture2D" uid="uid://d2p52cujxu31d" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Wizard/Wizard/Wizard.png" id="6_juj76"]
+[ext_resource type="Texture2D" uid="uid://c7smylgqxd14g" path="res://Art/Tiles/Tile01.png" id="7_j68d5"]
+
+[node name="MainNode" type="Node2D"]
+script = ExtResource("1_i7cby")
+
+[node name="ControllerCenter" parent="." instance=ExtResource("2_kgamm")]
+
+[node name="CharacterCreation" parent="." instance=ExtResource("3_rw1bg")]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(124, 50)
+scale = Vector2(0.2, 0.2)
+skew = 0.95644
+texture = ExtResource("4_rfdnl")
+
+[node name="Mines1" type="Sprite2D" parent="."]
+position = Vector2(127, 10)
+texture = ExtResource("5_s1xft")
+
+[node name="Archer" type="Sprite2D" parent="."]
+position = Vector2(73, 16)
+texture = ExtResource("6_juj76")
+hframes = 15
+vframes = 10
+
+[node name="Tile01" type="Sprite2D" parent="."]
+position = Vector2(88, 24)
+texture = ExtResource("7_j68d5")

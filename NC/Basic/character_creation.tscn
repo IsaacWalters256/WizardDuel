@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://lldl8u6fkihu"]
+
+[ext_resource type="Texture2D" uid="uid://d2p52cujxu31d" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Wizard/Wizard/Wizard.png" id="1_fnhix"]
+[ext_resource type="Script" uid="uid://eemotcwjul5f" path="res://NC/Basic/character_creation.gd" id="1_gbk6m"]
+[ext_resource type="Texture2D" uid="uid://c1bttv6hx8oem" path="res://Art/UISprites/Buttons/PNG/ButtonsA.png" id="2_uise6"]
+
+[node name="CharacterCreation" type="Node2D"]
+script = ExtResource("1_gbk6m")
+
+[node name="Archer" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(102, 101)
+scale = Vector2(2, 2)
+texture = ExtResource("1_fnhix")
+hframes = 15
+vframes = 10
+
+[node name="ButtonsA" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(207, 99)
+scale = Vector2(2, 2)
+texture = ExtResource("2_uise6")
