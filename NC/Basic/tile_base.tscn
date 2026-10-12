@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmhy0r3lr3hv5"]
+[gd_scene load_steps=3 format=3 uid="uid://cmhy0r3lr3hv5"]
 
 [ext_resource type="Script" uid="uid://dcl6d2kcwjt7h" path="res://NC/Basic/tile_base.gd" id="1_ix6wi"]
+[ext_resource type="Texture2D" uid="uid://c7smylgqxd14g" path="res://Art/Tiles/Tile01.png" id="2_w1hxc"]
 
 [node name="TileBase" type="Node2D"]
 script = ExtResource("1_ix6wi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(64, 0)
+texture = ExtResource("2_w1hxc")

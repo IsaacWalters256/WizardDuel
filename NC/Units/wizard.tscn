@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm51rj8lpo7gn"]
+
+[ext_resource type="Script" uid="uid://ylk1tphr14sr" path="res://NC/Units/wizard.gd" id="1_1xqom"]
+[ext_resource type="Texture2D" uid="uid://cqcpxvm60gny5" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Wizard/Wizard with shadows/Wizard.png" id="2_4uutg"]
+
+[node name="Wizard" type="Node2D"]
+script = ExtResource("1_1xqom")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
+texture = ExtResource("2_4uutg")
+hframes = 15
+vframes = 10
