@@ -1,20 +1,15 @@
 extends Node2D
 
-var neighbors = {
-	"Up": null,
-	"Down": null,
-	"Left": null,
-	"Right": null
-}
+var actions = [
+	
+]
 
+var typing
+var owner_id = -1
 
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func start(tile_to_load,owner_id_ref):
+	var ttl = load(tile_to_load).instantiate()
+	self.add_child(ttl)
+	typing = ttl
+	typing.start()
+	owner_id = owner_id_ref

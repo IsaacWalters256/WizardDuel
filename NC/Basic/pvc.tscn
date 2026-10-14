@@ -12,5 +12,5 @@ size = Vector2i(512, 300)
 render_target_update_mode = 4
 
 [node name="PC" type="Camera2D" parent="PV"]
-position = Vector2(186, 77)
+position = Vector2(242, 0)
 script = ExtResource("1_ruc82")

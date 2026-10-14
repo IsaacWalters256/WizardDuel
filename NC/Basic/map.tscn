@@ -8,3 +8,9 @@ script = ExtResource("1_rxg0u")
 [node name="Tiles" type="Node2D" parent="."]
 
 [node name="Units" type="Node2D" parent="."]
+
+[node name="AniTickTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="AniTickTimer" to="." method="_on_ani_tick_timer_timeout"]
