@@ -22,9 +22,12 @@ offset_bottom = 40.0
 
 [node name="PCVH1" type="HBoxContainer" parent="PCVV"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="PCVH2" type="HBoxContainer" parent="PCVV"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="PCVH3" type="HBoxContainer" parent="PCVV"]
 layout_mode = 2
+theme_override_constants/separation = 0

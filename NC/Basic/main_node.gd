@@ -6,7 +6,7 @@ var players = [[0,"wizard",null,null,["player","keyboard"],null],[1,"wizard",nul
 
 func start():
 	get_node("ControllerCenter").start()
-	get_node("CharacterCreation").start()
+	get_node("CharacterCreation").start(6)
 
 func creation_done(new_players):
 	players = new_players
