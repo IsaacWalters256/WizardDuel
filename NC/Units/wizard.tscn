@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm51rj8lpo7gn"]
+[gd_scene load_steps=4 format=3 uid="uid://bm51rj8lpo7gn"]
 
 [ext_resource type="Script" uid="uid://ylk1tphr14sr" path="res://NC/Units/wizard.gd" id="1_1xqom"]
 [ext_resource type="Texture2D" uid="uid://cqcpxvm60gny5" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Wizard/Wizard with shadows/Wizard.png" id="2_4uutg"]
+[ext_resource type="PackedScene" uid="uid://o7c0snmpd6v0" path="res://NC/Basic/player_control_reciever.tscn" id="3_2eju8"]
 
 [node name="Wizard" type="Node2D"]
 script = ExtResource("1_1xqom")
+
+[node name="PlayerControlReciever" parent="." instance=ExtResource("3_2eju8")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -7)

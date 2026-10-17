@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://o7c0snmpd6v0"]
+
+[ext_resource type="Script" uid="uid://c0le177fapwh3" path="res://NC/Basic/player_control_reciever.gd" id="1_8cdmw"]
+
+[node name="PlayerControlReciever" type="Node2D"]
+script = ExtResource("1_8cdmw")

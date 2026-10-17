@@ -3,8 +3,16 @@ extends Node2D
 
 
 func start():
-	set_up_controls(6)
+	pass#set_up_controls(6)
 
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event is InputEventKey:
+		#if event.pressed and event.keycode == KEY_ESCAPE:
+			#get_tree().quit()
+	#for p in get_parent().players:
+		#if p[5]:
+			#p[5].passed_input(event)
+	#Input.is_action_just_pressed("left")
 
 func set_up_controls(playerCount:int):
 	var actionList:Array[StringName]

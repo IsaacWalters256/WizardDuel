@@ -12,17 +12,23 @@ script = ExtResource("1_i7cby")
 
 [node name="CharacterCreation" parent="." instance=ExtResource("3_rw1bg")]
 
-[node name="Map" parent="." instance=ExtResource("4_3y56b")]
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Map" parent="SubViewport" instance=ExtResource("4_3y56b")]
 
 [node name="PCVV" type="VBoxContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_constants/separation = 0
 
 [node name="PCVH1" type="HBoxContainer" parent="PCVV"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="PCVH2" type="HBoxContainer" parent="PCVV"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="PCVH3" type="HBoxContainer" parent="PCVV"]
 layout_mode = 2
+theme_override_constants/separation = 0
