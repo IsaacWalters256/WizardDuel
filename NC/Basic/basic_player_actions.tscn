@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://noqaxn20vtbw"]
-
-[ext_resource type="Script" uid="uid://deppqkrjpsu1b" path="res://NC/Basic/basic_player_actions.gd" id="1_bfdgj"]
-
-[node name="BasicPlayerActions" type="Node2D"]
-script = ExtResource("1_bfdgj")
-
-[node name="Area2D" type="Area2D" parent="."]

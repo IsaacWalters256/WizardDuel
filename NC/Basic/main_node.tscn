@@ -19,6 +19,7 @@ script = ExtResource("1_i7cby")
 [node name="PCVV" type="VBoxContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_constants/separation = 0
 
 [node name="PCVH1" type="HBoxContainer" parent="PCVV"]
 layout_mode = 2

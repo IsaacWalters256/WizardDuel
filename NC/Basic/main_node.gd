@@ -25,7 +25,7 @@ func load_cameras():
 		#self.add_child(new_pvc)
 		#TODO update the pcv sizes too
 		players[p][2] = new_pvc.get_node("PV/PC")
-		players[p][2].follow_target = players[p][3]
+		players[p][2].follow_target = players[p][3].typing
 		#players[p][2].position = players[p][3].position
 		new_pvc.get_node("PV").world_2d = get_node("SubViewport").world_2d
 		

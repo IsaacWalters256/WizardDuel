@@ -12,7 +12,7 @@ func start(main_ref):
 		new_tile("plains1")
 		new_tile("standard1")
 		new_unit(p[1],p[0],(880*p[0])+176)
-
+	get_node("AniRunner").start()
 
 func new_unit(type,u_owner,posx):
 	var new_unit = load("res://NC/Basic/unit_base.tscn").instantiate()
@@ -28,7 +28,7 @@ func new_tile(type):
 	get_node("Tiles").add_child(new_tile)
 	tile_line.append(new_tile)
 	new_tile.position.x = tile_line.size()*128
-	new_tile.position.y = 24
+	#new_tile.position.y = 24
 	var typing = load(tile_dict[type]).instantiate()
 	new_tile.typing = typing
 	new_tile.add_child(typing)
@@ -43,7 +43,3 @@ var tile_dict = {
 	"plains1": "res://NC/Tiles/plains_1.tscn",
 	"standard1": "res://NC/Tiles/standard_1.tscn"
 }
-
-func _on_ani_tick_timer_timeout() -> void:
-	for u in get_node("Units").get_children():
-		u.next_ani_frame()

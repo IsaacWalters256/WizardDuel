@@ -7,7 +7,7 @@ var speed_incra = 0.02
 var delta_mod = 5
 
 func _process(delta: float) -> void:
-	self.position = follow_target.position
+	self.position = follow_target.get_global_position()
 	#if self.position.distance_to(follow_target.position) > 40:
 		#if self.position.x < follow_target.position.x - 40:
 			#self.position.x = follow_target.position.x - 40
