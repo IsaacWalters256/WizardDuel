@@ -1,7 +1,7 @@
 extends Node2D
 
-#index, wizard type, camera ref, unit ref
-var players = [[0,"wizard",null,null,["player","keyboard"],null],[1,"wizard",null,null,["player","controller1"],null]]
+#index, wizard type, camera ref, unit ref, control type,pcr,ui
+var players = [[0,"wizard",null,null,["player","keyboard"],null,null],[1,"wizard",null,null,["player","controller1"],null,null]]
 @onready var map = get_node("SubViewport/Map")
 
 func start():
@@ -28,6 +28,8 @@ func load_cameras():
 		players[p][2].follow_target = players[p][3].typing
 		#players[p][2].position = players[p][3].position
 		new_pvc.get_node("PV").world_2d = get_node("SubViewport").world_2d
+		#TODO get_node("LockerSprite").texture = texture for this pvc's size
+		new_pvc.get_node("LockerSprite/PlayerUI").start(players[p])
 		
 		if players.size() == 2:
 			new_pvc.get_node("PV").size = Vector2(512,150)

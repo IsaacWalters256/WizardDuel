@@ -11,7 +11,7 @@ func start(main_ref):
 		new_tile("plains1")
 		new_tile("plains1")
 		new_tile("standard1")
-		new_unit(p[1],p[0],(880*p[0])+176)
+		new_unit(p[1],p[0],(480*p[0])+176)
 	get_node("AniRunner").start()
 
 func new_unit(type,u_owner,posx):

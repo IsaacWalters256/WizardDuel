@@ -6,8 +6,11 @@ var max_speed = 3
 var speed_incra = 0.02
 var delta_mod = 5
 
+
+
 func _process(delta: float) -> void:
-	self.position = follow_target.get_global_position()
+	self.position = Vector2(follow_target.get_global_position().x,follow_target.get_global_position().y-16)
+	#TODO maybe have it add a node onto the target and follow that that we can move?
 	#if self.position.distance_to(follow_target.position) > 40:
 		#if self.position.x < follow_target.position.x - 40:
 			#self.position.x = follow_target.position.x - 40

@@ -6,7 +6,7 @@ var direction_facing = "right"
 var state = "idle"
 var locked = false
 var players
-var z_value = 24 #out of 48
+var z_value = 18 #out of 40?
 var anis
 var anis_info = ["idle",0]
 var graphic = null
@@ -23,7 +23,7 @@ func start(owner_id_ref,players_ref):
 	typing.start(owner_id,players)
 	anis = typing.anis
 	graphic = typing.get_node("Sprite2D")
-	update_z(-24)
+	update_z(-z_value)
 	
 
 func swap_direction(new_direction):

@@ -1,20 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4a11nwf74sux"]
+[gd_scene load_steps=8 format=3 uid="uid://c4a11nwf74sux"]
 
 [ext_resource type="Script" uid="uid://d32g0c3jrd0ic" path="res://NC/UIParts/player_ui.gd" id="1_bsc2m"]
 [ext_resource type="FontFile" uid="uid://cwf87upm5smwu" path="res://Art/UISprites/Franuka/Fonts/FantasyRPGtext (size 12).ttf" id="1_nkbbo"]
 [ext_resource type="FontFile" uid="uid://fivn0sjhcsl5" path="res://Art/UISprites/Franuka/Fonts/FantasyRPGtitle (size 17).ttf" id="2_bsc2m"]
+[ext_resource type="Texture2D" uid="uid://d3t0o002lh3ht" path="res://Art/UISprites/256by100.png" id="2_t6nce"]
 [ext_resource type="FontFile" uid="uid://d4ck5rngcth87" path="res://Art/UISprites/Franuka/Fonts/FantasyRPGtitleOutline (size 20).ttf" id="3_t6nce"]
 [ext_resource type="Texture2D" uid="uid://f27weei7tjv0" path="res://Art/UISprites/Franuka/1x/Resource orbs/DecoratedFrame1_Left.png" id="4_hmtu8"]
 [ext_resource type="Texture2D" uid="uid://2w0apxgkmixk" path="res://Art/UISprites/Franuka/1x/Spellbook & Tabs/Spellbook.png" id="5_wfelm"]
 
 [node name="PlayerUI" type="Node2D"]
-visible = false
 script = ExtResource("1_bsc2m")
+
+[node name="OutlineSmallest" type="Sprite2D" parent="."]
+texture = ExtResource("2_t6nce")
+centered = false
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(256, 100)
 
 [node name="Spellbook" type="Sprite2D" parent="."]
+position = Vector2(31, 71)
 texture = ExtResource("5_wfelm")
 
 [node name="Label" type="Label" parent="."]
@@ -44,5 +49,5 @@ theme_override_font_sizes/font_size = 20
 text = "20 outline"
 
 [node name="DecoratedFrame1Left" type="Sprite2D" parent="."]
-position = Vector2(150, 77)
+position = Vector2(215, 70)
 texture = ExtResource("4_hmtu8")
