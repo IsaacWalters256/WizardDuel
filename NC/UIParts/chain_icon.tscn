@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://7wr4xhaqn1ie"]
+
+[ext_resource type="Script" uid="uid://p1crrjp3bhws" path="res://NC/UIParts/chain_icon.gd" id="1_1d2eu"]
+[ext_resource type="Texture2D" uid="uid://fxwdf1ebw8mc" path="res://Art/UISprites/Franuka/1x/Mini icons/Icon_02_Outline.png" id="1_vgwtb"]
+
+[node name="ChainIcon" type="Node2D"]
+script = ExtResource("1_1d2eu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6, 0)
+texture = ExtResource("1_vgwtb")
+
+[node name="ChainPoint" type="Node2D" parent="."]
+position = Vector2(-11, 0)

@@ -28,7 +28,7 @@ func load_cameras():
 		players[p][2].follow_target = players[p][3].typing
 		#players[p][2].position = players[p][3].position
 		new_pvc.get_node("PV").world_2d = get_node("SubViewport").world_2d
-		#TODO get_node("LockerSprite").texture = texture for this pvc's size
+		#TODO get_node("LockerSprite").texture = texture for this pvc's size (actually in UI sprite now)
 		new_pvc.get_node("LockerSprite/PlayerUI").start(players[p])
 		
 		if players.size() == 2:

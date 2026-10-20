@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb05lul5bgx7i"]
+
+[ext_resource type="Script" uid="uid://ndv0dnvilg3k" path="res://NC/Tiles/pondering_chamber.gd" id="1_vmdu2"]
+[ext_resource type="Texture2D" uid="uid://bs3sxt6komsa0" path="res://Art/Tiles/FirstDraft/PonderingChamber.png" id="2_vmdu2"]
+
+[node name="PonderingChamber" type="Node2D"]
+script = ExtResource("1_vmdu2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+texture = ExtResource("2_vmdu2")

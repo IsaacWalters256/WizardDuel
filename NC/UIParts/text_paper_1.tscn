@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cer8nle4f7dym"]
+
+[ext_resource type="Texture2D" uid="uid://dm58likbogjt" path="res://Art/UISprites/Franuka/1x/Background boxes/BGbox_04A.png" id="1_610o5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxq8r"]
+texture = ExtResource("1_610o5")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7cl80"]
+sources/0 = SubResource("TileSetAtlasSource_pxq8r")
+
+[node name="TextPaper1" type="TileMap"]
+tile_set = SubResource("TileSet_7cl80")
+format = 2

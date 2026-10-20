@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh13usb8y3e23"]
+
+[ext_resource type="Script" uid="uid://brqjero0s0im5" path="res://NC/Tiles/stables.gd" id="1_olh5p"]
+[ext_resource type="Texture2D" uid="uid://cwn5e3khor6k2" path="res://Art/Tiles/FirstDraft/Stables.png" id="2_dynhn"]
+
+[node name="Stables" type="Node2D"]
+script = ExtResource("1_olh5p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+texture = ExtResource("2_dynhn")

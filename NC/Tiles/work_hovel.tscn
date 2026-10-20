@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://gtoayjtjghjq"]
+
+[ext_resource type="Script" uid="uid://kf0t4j4rtst8" path="res://NC/Tiles/work_hovel.gd" id="1_53qjw"]
+[ext_resource type="Texture2D" uid="uid://conl3pj6scpmu" path="res://Art/Tiles/FirstDraft/WorkHovel.png" id="2_53qjw"]
+
+[node name="WorkHovel" type="Node2D"]
+script = ExtResource("1_53qjw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+texture = ExtResource("2_53qjw")

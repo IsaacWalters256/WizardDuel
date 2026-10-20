@@ -2,8 +2,6 @@ extends Node2D
 
 var speed = 4
 
-var owner_id
-var players
 var anis = {
 	"idle": [
 		{"an":0},
@@ -28,7 +26,10 @@ var anis = {
 	#]
 }
 
-func start(owner_id_ref,players_ref):
-	owner_id = owner_id_ref
-	players = players_ref
-	players_ref[owner_id][3] = get_parent()
+func start():
+	get_parent().player[3] = get_parent()
+	get_parent().stats["coin"] = [10,10]
+	get_parent().stats["mana"] = [7,7]
+	get_parent().stats["heart"] = [5,5]
+	
+	

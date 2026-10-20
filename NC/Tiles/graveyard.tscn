@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjxdd63whockm"]
+
+[ext_resource type="Script" uid="uid://q4w4mc2oyl1e" path="res://NC/Tiles/graveyard.gd" id="1_otccw"]
+[ext_resource type="Texture2D" uid="uid://baq13k3iet1ix" path="res://Art/Tiles/FirstDraft/Graveyard.png" id="2_otccw"]
+
+[node name="Graveyard" type="Node2D"]
+script = ExtResource("1_otccw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+texture = ExtResource("2_otccw")

@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://2g4xkp7iggw6"]
+
+[ext_resource type="Texture2D" uid="uid://dfllflt6p6nl6" path="res://Art/UISprites/Franuka/BookNewPage.png" id="1_0kom5"]
+[ext_resource type="FontFile" uid="uid://cwf87upm5smwu" path="res://Art/UISprites/Franuka/Fonts/FantasyRPGtext (size 12).ttf" id="2_8s8g7"]
+[ext_resource type="Script" uid="uid://bin0a3xa5dgh4" path="res://NC/UIParts/page_contents.gd" id="2_mnum4"]
+[ext_resource type="Texture2D" uid="uid://b6kt77vqgpuf6" path="res://Art/UISprites/Franuka/SpellbookFullSprite.png" id="3_mnum4"]
+
+[node name="PageContents" type="Sprite2D"]
+clip_children = 1
+light_mask = 2
+visibility_layer = 2
+texture = ExtResource("1_0kom5")
+hframes = 8
+vframes = 4
+frame = 7
+script = ExtResource("2_mnum4")
+
+[node name="RefBook" type="Sprite2D" parent="."]
+texture = ExtResource("3_mnum4")
+hframes = 8
+vframes = 4
+
+[node name="WizardName" type="Label" parent="."]
+offset_left = 9.0
+offset_top = -28.0
+offset_right = 101.0
+offset_bottom = -19.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8s8g7")
+theme_override_font_sizes/font_size = 12
+text = "SOMETHIGN THE PASSONATE"
+horizontal_alignment = 1
+
+[node name="Contents" type="Label" parent="."]
+offset_left = 12.0
+offset_top = -20.0
+offset_right = 104.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -3
+theme_override_fonts/font = ExtResource("2_8s8g7")
+theme_override_font_sizes/font_size = 12
+text = "TABLE OF CONTENTS
+
+Page 1: Contents
+Page 2: Spells
+Page 3: Build"

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch3ea3h47ntkm"]
+
+[ext_resource type="Texture2D" uid="uid://d3rlfgd4wi3xt" path="res://Art/UISprites/Franuka/1x/Title banners/BannerMedium_02A.png" id="1_f84rj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_myimq"]
+texture = ExtResource("1_f84rj")
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/0 = 0
+1:0/size_in_atlas = Vector2i(1, 2)
+1:0/0 = 0
+2:0/size_in_atlas = Vector2i(1, 2)
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_njgnp"]
+sources/0 = SubResource("TileSetAtlasSource_myimq")
+
+[node name="TextBanner" type="TileMap"]
+tile_set = SubResource("TileSet_njgnp")
+format = 2

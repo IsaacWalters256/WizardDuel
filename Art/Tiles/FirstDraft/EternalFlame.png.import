@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be8kykhdapuvt"
-path="res://.godot/imported/Tab01_Bottom_Normal.png-e2aefd96976dc1ac9b570bd5d9eb73c6.ctex"
+uid="uid://b847ye8p6jenm"
+path="res://.godot/imported/EternalFlame.png-69466e6c75d7124862f90952ea9a8287.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UISprites/Franuka/1x/Spellbook & Tabs/Tab01_Bottom_Normal.png"
-dest_files=["res://.godot/imported/Tab01_Bottom_Normal.png-e2aefd96976dc1ac9b570bd5d9eb73c6.ctex"]
+source_file="res://Art/Tiles/FirstDraft/EternalFlame.png"
+dest_files=["res://.godot/imported/EternalFlame.png-69466e6c75d7124862f90952ea9a8287.ctex"]
 
 [params]
 

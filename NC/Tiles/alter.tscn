@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgh6vwgtpetmu"]
+
+[ext_resource type="Script" uid="uid://dt042oiwa3jiy" path="res://NC/Tiles/alter.gd" id="1_e0maw"]
+[ext_resource type="Texture2D" uid="uid://ir3qlyupaw46" path="res://Art/Tiles/FirstDraft/Alter.png" id="2_e0maw"]
+
+[node name="Alter" type="Node2D"]
+script = ExtResource("1_e0maw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+texture = ExtResource("2_e0maw")

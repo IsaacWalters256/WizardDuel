@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3tci17bykq00"]
+
+[ext_resource type="Script" uid="uid://c8uh3pwau5e2o" path="res://NC/UIParts/stats_display.gd" id="1_ax3ie"]
+
+[node name="StatsDisplay" type="Node2D"]
+script = ExtResource("1_ax3ie")
+
+[node name="coin" type="Node2D" parent="."]
+position = Vector2(98, 6)
+
+[node name="mana" type="Node2D" parent="."]
+position = Vector2(98, 17)
+
+[node name="heart" type="Node2D" parent="."]
+position = Vector2(98, 27)

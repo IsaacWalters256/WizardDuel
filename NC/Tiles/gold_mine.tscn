@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://brieryadd05iq"]
+
+[ext_resource type="Script" uid="uid://dn3phy6jlhxne" path="res://NC/Tiles/gold_mine.gd" id="1_s2kwp"]
+[ext_resource type="Texture2D" uid="uid://cltgdt1v6a1aw" path="res://Art/Tiles/FirstDraft/GoldMine.png" id="2_s2kwp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2kwp"]
+size = Vector2(113, 20)
+
+[node name="GoldMine" type="Node2D"]
+script = ExtResource("1_s2kwp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_s2kwp")
+
+[node name="BackLeft" type="Sprite2D" parent="."]
+position = Vector2(0, -23)
+texture = ExtResource("2_s2kwp")
+
+[node name="BackRight" type="Sprite2D" parent="."]
+position = Vector2(0, -23)
+texture = ExtResource("2_s2kwp")
+
+[node name="FrontLeft" type="Sprite2D" parent="."]
+position = Vector2(0, -23)
+texture = ExtResource("2_s2kwp")
+
+[node name="FrontRight" type="Sprite2D" parent="."]
+position = Vector2(0, -23)
+texture = ExtResource("2_s2kwp")

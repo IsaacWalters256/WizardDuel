@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcebd3wpb7c4p"]
+
+[ext_resource type="Script" uid="uid://jb74sisvj5f0" path="res://NC/Tiles/transfusion_table.gd" id="1_3uhwk"]
+[ext_resource type="Texture2D" uid="uid://bqi42kopexhoy" path="res://Art/Tiles/FirstDraft/TransfusionTable.png" id="1_xna5o"]
+
+[node name="TransfusionTable" type="Node2D"]
+script = ExtResource("1_3uhwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+texture = ExtResource("1_xna5o")

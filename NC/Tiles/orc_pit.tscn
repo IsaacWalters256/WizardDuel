@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnqobsxpr16ev"]
+
+[ext_resource type="Script" uid="uid://dibdnv0wutdp4" path="res://NC/Tiles/orc_pit.gd" id="1_jlk87"]
+[ext_resource type="Texture2D" uid="uid://c1ntnck6cxlqj" path="res://Art/Tiles/FirstDraft/OrcPit.png" id="2_jlk87"]
+
+[node name="OrcPit" type="Node2D"]
+script = ExtResource("1_jlk87")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+texture = ExtResource("2_jlk87")

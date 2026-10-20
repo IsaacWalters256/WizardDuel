@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhb5ybse66qu3"]
+
+[ext_resource type="Script" uid="uid://42str32xboyq" path="res://NC/Tiles/eternal_flame.gd" id="1_48syx"]
+[ext_resource type="Texture2D" uid="uid://b847ye8p6jenm" path="res://Art/Tiles/FirstDraft/EternalFlame.png" id="2_48syx"]
+
+[node name="EternalFlame" type="Node2D"]
+script = ExtResource("1_48syx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+texture = ExtResource("2_48syx")

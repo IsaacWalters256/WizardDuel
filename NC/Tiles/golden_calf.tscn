@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b88sbe3sue80h"]
+
+[ext_resource type="Script" uid="uid://blf4l1sy4vogu" path="res://NC/Tiles/golden_calf.gd" id="1_ckwsw"]
+[ext_resource type="Texture2D" uid="uid://1ueughrsq4r6" path="res://Art/Tiles/FirstDraft/GoldenCalff.png" id="2_onfts"]
+
+[node name="GoldenCalf" type="Node2D"]
+script = ExtResource("1_ckwsw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+texture = ExtResource("2_onfts")

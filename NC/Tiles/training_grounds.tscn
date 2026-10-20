@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ulb0h1w4fq2c"]
+
+[ext_resource type="Script" uid="uid://d17h6inbwtom5" path="res://NC/Tiles/training_grounds.gd" id="1_lnvsm"]
+[ext_resource type="Texture2D" uid="uid://bvwv0kc5yyi54" path="res://Art/Tiles/FirstDraft/TrainingGrounds.png" id="2_vuu0m"]
+
+[node name="TrainingGrounds" type="Node2D"]
+script = ExtResource("1_lnvsm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+texture = ExtResource("2_vuu0m")
