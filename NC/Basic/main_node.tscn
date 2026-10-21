@@ -15,8 +15,10 @@ script = ExtResource("1_i7cby")
 [node name="SubViewport" type="SubViewport" parent="."]
 
 [node name="Map" parent="SubViewport" instance=ExtResource("4_3y56b")]
+visible = false
 
 [node name="PCVV" type="VBoxContainer" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 0
