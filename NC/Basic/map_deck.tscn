@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bewd40egtcede" path="res://NC/Basic/map_deck.gd" id="1_k13ll"]
 [ext_resource type="Texture2D" uid="uid://dv17hx2rnedye" path="res://Art/UISprites/1by1.png" id="2_bmmhk"]
-[ext_resource type="Texture2D" uid="uid://d36wrdm5ww4to" path="res://Art/UISprites/updated-card-2026.png" id="2_mg708"]
+[ext_resource type="Texture2D" uid="uid://dfsetobb5aouo" path="res://Art/UISprites/CardsOrderChanged.png" id="3_bmmhk"]
 
 [node name="MapDeck" type="Node2D"]
 script = ExtResource("1_k13ll")
@@ -14,7 +14,7 @@ scale = Vector2(58, 82)
 texture = ExtResource("2_bmmhk")
 
 [node name="DeckSprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_mg708")
+texture = ExtResource("3_bmmhk")
 hframes = 15
 vframes = 6
 

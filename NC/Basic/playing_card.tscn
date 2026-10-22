@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnixjypc01xbm"]
+[gd_scene load_steps=3 format=3 uid="uid://bnixjypc01xbm"]
 
 [ext_resource type="Script" uid="uid://dg4c6ql71kmts" path="res://NC/Basic/playing_card.gd" id="1_ahha0"]
+[ext_resource type="Texture2D" uid="uid://dfsetobb5aouo" path="res://Art/UISprites/CardsOrderChanged.png" id="2_rppwh"]
 
 [node name="PlayingCard" type="Node2D"]
 script = ExtResource("1_ahha0")
+
+[node name="Front" type="Sprite2D" parent="."]
+scale = Vector2(1e-05, 1)
+texture = ExtResource("2_rppwh")
+hframes = 15
+vframes = 6
+frame = 2
+
+[node name="Back" type="Sprite2D" parent="."]
+texture = ExtResource("2_rppwh")
+hframes = 15
+vframes = 6

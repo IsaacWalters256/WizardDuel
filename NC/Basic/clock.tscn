@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c30yx664cmgrg"]
+
+[ext_resource type="Texture2D" uid="uid://b0qmm1q56ybtc" path="res://Art/UISprites/Franuka/1x/Resource orbs/DecoratedFrame1_Right.png" id="1_kl221"]
+
+[node name="Clock" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kl221")

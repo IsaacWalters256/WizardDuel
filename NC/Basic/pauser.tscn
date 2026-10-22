@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1ddgod4j4xge"]
+
+[ext_resource type="Script" uid="uid://ft0vrw56o2s7" path="res://NC/Basic/pauser.gd" id="1_5351g"]
+
+[node name="Pauser" type="Node2D"]
+script = ExtResource("1_5351g")
