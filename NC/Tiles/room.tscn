@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://jnl37lbxj2yu"]
+
+[ext_resource type="Texture2D" uid="uid://sykxoonmjq1u" path="res://Art/UISprites/RoomSize1.png" id="1_w5iw0"]
+[ext_resource type="Texture2D" uid="uid://dfsetobb5aouo" path="res://Art/UISprites/CardsOrderChanged.png" id="2_hlkca"]
+[ext_resource type="Texture2D" uid="uid://cqeonkj3kkoqv" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Armored Axeman/Armored Axeman/Armored Axeman_Attack01.png" id="3_8t8mn"]
+[ext_resource type="Texture2D" uid="uid://bj2t55u21jlil" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Armored Orc/Armored Orc/Armored Orc_Attack01.png" id="4_taq6j"]
+
+[node name="Room" type="Sprite2D"]
+clip_children = 2
+texture = ExtResource("1_w5iw0")
+
+[node name="Sample" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(1.5, 3)
+texture = ExtResource("2_hlkca")
+hframes = 15
+vframes = 6
+frame = 17
+
+[node name="ArmoredAxemanAttack01" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-74, -7)
+scale = Vector2(-1, 1)
+texture = ExtResource("3_8t8mn")
+hframes = 7
+
+[node name="ArmoredOrcAttack01" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-86, -7)
+texture = ExtResource("4_taq6j")
+hframes = 6
+
+[node name="BattlePoints" type="Node2D" parent="."]
+
+[node name="BattlePointCenter" type="Node2D" parent="BattlePoints"]
+
+[node name="BattlePointFarLeftCenter" type="Node2D" parent="BattlePoints"]
+position = Vector2(-81, 0)
+
+[node name="BattlePointFarRightCenter2" type="Node2D" parent="BattlePoints"]
+position = Vector2(81, 0)
+
+[node name="BattlePointTopFarLeft" type="Node2D" parent="BattlePoints"]
+position = Vector2(-81, -13)
+
+[node name="BattlePointBotFarLeft" type="Node2D" parent="BattlePoints"]
+position = Vector2(-81, 14)
+
+[node name="BattlePointTopFarRight" type="Node2D" parent="BattlePoints"]
+position = Vector2(81, -13)
+
+[node name="BattlePointBotFarRight" type="Node2D" parent="BattlePoints"]
+position = Vector2(81, 14)
+
+[node name="BattlePointTopCenter" type="Node2D" parent="BattlePoints"]
+position = Vector2(0, -13)
+
+[node name="BattlePointBotFarCenter" type="Node2D" parent="BattlePoints"]
+position = Vector2(0, 14)
+
+[node name="BattlePointTopMidLeft" type="Node2D" parent="BattlePoints"]
+position = Vector2(-36, -13)
+
+[node name="BattlePointBotMidLeft" type="Node2D" parent="BattlePoints"]
+position = Vector2(-36, 14)
+
+[node name="BattlePointTopMidRight" type="Node2D" parent="BattlePoints"]
+position = Vector2(36, -13)
+
+[node name="BattlePointBotMidRight" type="Node2D" parent="BattlePoints"]
+position = Vector2(36, 14)
+
+[node name="BattlePointLeftCenter" type="Node2D" parent="BattlePoints"]
+position = Vector2(-54, 0)
+
+[node name="BattlePointRightCenter" type="Node2D" parent="BattlePoints"]
+position = Vector2(54, 0)

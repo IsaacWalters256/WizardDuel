@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3wxr00mvijl"]
+
+[ext_resource type="Texture2D" uid="uid://dfsetobb5aouo" path="res://Art/UISprites/CardsOrderChanged.png" id="1_ob8jc"]
+[ext_resource type="PackedScene" uid="uid://cmb81p1uha0qu" path="res://NC/RoomHotSpots/room_hot_spot.tscn" id="2_2rngd"]
+
+[node name="RoomAce" type="Node2D"]
+
+[node name="Sample" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(1.5, 3)
+texture = ExtResource("1_ob8jc")
+hframes = 15
+vframes = 6
+frame = 17
+
+[node name="RoomHotSpot" parent="." instance=ExtResource("2_2rngd")]
