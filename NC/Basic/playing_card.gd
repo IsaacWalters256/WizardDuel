@@ -2,6 +2,7 @@ extends Node2D
 
 var card_info = []
 var face_down = true
+var locked = true
 
 func start(card_info_ref):
 	card_info = card_info_ref
@@ -22,6 +23,10 @@ func movement(type):
 		if !face_down:
 			node_leaving = get_node("Front")
 			node_coming = get_node("Back")
+			locked = true
+		else:
+			locked = false
+		face_down = !face_down
 		tween0.tween_property(self, "position", Vector2(self.position.x,self.position.y-5), 0.5)
 		tween0.parallel().tween_property(node_leaving, "scale", Vector2(0,self.scale.y), 0.5)
 		tween0.tween_property(self, "position", Vector2(self.position.x,self.position.y), 0.5)

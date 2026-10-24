@@ -1,8 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://c30yx664cmgrg"]
+[gd_scene load_steps=5 format=3 uid="uid://c30yx664cmgrg"]
 
 [ext_resource type="Texture2D" uid="uid://b0qmm1q56ybtc" path="res://Art/UISprites/Franuka/1x/Resource orbs/DecoratedFrame1_Right.png" id="1_kl221"]
+[ext_resource type="Script" uid="uid://d5lcloxep8m4" path="res://NC/Basic/clock.gd" id="1_liklv"]
+[ext_resource type="Texture2D" uid="uid://dy8s2w8rse3so" path="res://Art/UISprites/Franuka/1x/Resource orbs/Orb_Energy.png" id="2_kr861"]
+[ext_resource type="Texture2D" uid="uid://dsnlhl2uxruw1" path="res://Art/UISprites/Franuka/1x/Resource orbs/Orb_Frame_Empty.png" id="3_kr861"]
 
 [node name="Clock" type="Node2D"]
+script = ExtResource("1_liklv")
+
+[node name="OrbEnergy" type="TextureProgressBar" parent="."]
+offset_left = -40.0
+offset_top = -24.0
+offset_right = 8.0
+offset_bottom = 24.0
+fill_mode = 4
+texture_under = ExtResource("2_kr861")
+texture_progress = ExtResource("3_kr861")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_kl221")

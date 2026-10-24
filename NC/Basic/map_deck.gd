@@ -1,5 +1,7 @@
 extends Node2D
 
+
+
 #bottom to top
 var card_order = []
 var removed_from_deck = []
@@ -9,11 +11,15 @@ var locked = false
 
 func start(contents):
 	card_order = contents
+	change_our_back()
+
+func change_our_back():
+	get_node("DeckSprite").frame = card_order[card_order.size()-1][1]
 
 func in_focus(focused):
 	get_node("1By1").visible = focused
 
-func draw_card(from_top,location,save_to):
+func draw_card(from_top,location,save_to,board_spot="na"):
 	#if from top == true
 	var card_drawn = card_order.pop_back()
 	removed_from_deck.append(card_drawn)
@@ -22,6 +28,12 @@ func draw_card(from_top,location,save_to):
 	save_to.add_child(created_card)
 	created_card.global_position = self.get_global_position()
 	created_card.movement(["move_with_bump",location.get_global_position()])
+	
+	change_our_back()
+	
+	if board_spot:
+		get_parent().cards[board_spot] = created_card
+	
 	return created_card
 
 

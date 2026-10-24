@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cmtuk85j7jriu"]
+[gd_scene load_steps=36 format=3 uid="uid://cmtuk85j7jriu"]
 
 [ext_resource type="Texture2D" uid="uid://djsdgf8vyo5sq" path="res://Art/UISprites/MapSize.png" id="1_m13f2"]
 [ext_resource type="Script" uid="uid://csodfgph3q02f" path="res://NC/Basic/other_main.gd" id="1_s1dh6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c30yx664cmgrg" path="res://NC/Basic/clock.tscn" id="4_e5ia1"]
 [ext_resource type="Texture2D" uid="uid://onhmjg1g3f1x" path="res://Art/UISprites/CutHand.png" id="4_feyix"]
 [ext_resource type="Texture2D" uid="uid://osat6bqmslgw" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Archer/Archer/Archer_Death.png" id="5_037rj"]
+[ext_resource type="PackedScene" uid="uid://b8xme34hdxw4f" path="res://NC/Basic/health.tscn" id="5_sou63"]
 [ext_resource type="Texture2D" uid="uid://cqeonkj3kkoqv" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Armored Axeman/Armored Axeman/Armored Axeman_Attack01.png" id="6_sou63"]
 [ext_resource type="Texture2D" uid="uid://bj2t55u21jlil" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Armored Orc/Armored Orc/Armored Orc_Attack01.png" id="7_nvivf"]
 [ext_resource type="Texture2D" uid="uid://bjbh28rtv4uj0" path="res://Art/UISprites/256by100-export.png" id="8_bu521"]
@@ -31,6 +32,7 @@
 [ext_resource type="FontFile" uid="uid://fivn0sjhcsl5" path="res://Art/UISprites/Franuka/Fonts/FantasyRPGtitle (size 17).ttf" id="27_kfk1x"]
 [ext_resource type="PackedScene" uid="uid://bm8u55pt0j3ye" path="res://NC/Basic/map_deck.tscn" id="28_5vust"]
 [ext_resource type="Texture2D" uid="uid://sykxoonmjq1u" path="res://Art/UISprites/RoomSize1.png" id="31_feyix"]
+[ext_resource type="Texture2D" uid="uid://do1qjx8u8hctf" path="res://Art/UISprites/Franuka/1x/Dividers/Divider_07.png" id="32_037rj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2bm8"]
 texture = ExtResource("3_e5ia1")
@@ -57,35 +59,38 @@ scale = Vector2(2.0625, 1.6)
 texture = ExtResource("1_m13f2")
 
 [node name="MapDeck" parent="." instance=ExtResource("28_5vust")]
-position = Vector2(-40, 248)
+position = Vector2(32, 224)
 
 [node name="SavedCards" type="Node2D" parent="."]
 
 [node name="CardSpots" type="Node2D" parent="."]
 
 [node name="Spot0" type="Node2D" parent="CardSpots"]
-position = Vector2(64, 48)
+position = Vector2(32, 48)
 
 [node name="Spot1" type="Node2D" parent="CardSpots"]
-position = Vector2(128, 48)
+position = Vector2(96, 48)
 
 [node name="Spot2" type="Node2D" parent="CardSpots"]
-position = Vector2(192, 48)
+position = Vector2(160, 48)
 
 [node name="Spot3" type="Node2D" parent="CardSpots"]
-position = Vector2(64, 136)
+position = Vector2(32, 136)
 
 [node name="Spot4" type="Node2D" parent="CardSpots"]
-position = Vector2(128, 136)
+position = Vector2(96, 136)
 
 [node name="Spot5" type="Node2D" parent="CardSpots"]
-position = Vector2(192, 136)
+position = Vector2(160, 136)
 
 [node name="HandSpot" type="Node2D" parent="CardSpots"]
-position = Vector2(32, 248)
+position = Vector2(96, 224)
 
 [node name="Clock" parent="." instance=ExtResource("4_e5ia1")]
-position = Vector2(104, 256)
+position = Vector2(243, 42)
+
+[node name="Health" parent="." instance=ExtResource("5_sou63")]
+position = Vector2(222, 89)
 
 [node name="TextPaper1" parent="." instance=ExtResource("2_s1dh6")]
 visible = false
@@ -93,7 +98,7 @@ tile_set = SubResource("TileSet_nin8b")
 layer_0/tile_data = PackedInt32Array(786433, 65536, 0, 786434, 65536, 0, 786435, 65536, 0, 786436, 65536, 0, 786437, 65536, 0, 786438, 65536, 0, 786439, 65536, 0, 786440, 131072, 0, 851976, 131072, 1, 917512, 131072, 1, 983048, 131072, 1, 1048584, 131072, 1, 1179656, 131072, 2, 1114120, 131072, 1, 1179655, 65536, 2, 1179654, 65536, 2, 1179653, 65536, 2, 1179652, 65536, 2, 1179651, 65536, 2, 1179650, 65536, 2, 1179649, 65536, 2, 786432, 0, 0, 851968, 0, 1, 917504, 0, 1, 983040, 0, 1, 1048576, 0, 1, 1114112, 0, 1, 1179648, 0, 2, 1114113, 65536, 1, 1114114, 65536, 1, 1114115, 65536, 1, 1114116, 65536, 1, 1114117, 65536, 1, 1114118, 65536, 1, 1114119, 65536, 1, 1048583, 65536, 1, 983047, 65536, 1, 917511, 65536, 1, 851975, 65536, 1, 851974, 65536, 1, 851973, 65536, 1, 851972, 65536, 1, 851971, 65536, 1, 851970, 65536, 1, 851969, 65536, 1, 917505, 65536, 1, 983041, 65536, 1, 1048577, 65536, 1, 1048578, 65536, 1, 1048579, 65536, 1, 1048580, 65536, 1, 1048581, 65536, 1, 983045, 65536, 1, 983046, 65536, 1, 917510, 65536, 1, 1048582, 65536, 1, 917509, 65536, 1, 917508, 65536, 1, 917507, 65536, 1, 917506, 65536, 1, 983042, 65536, 1, 983043, 65536, 1, 983044, 65536, 1)
 
 [node name="CutHand" type="Sprite2D" parent="."]
-position = Vector2(144, 192)
+position = Vector2(144, 173)
 texture = ExtResource("4_feyix")
 
 [node name="ArcherDeath" type="Sprite2D" parent="."]
@@ -246,5 +251,10 @@ theme_override_font_sizes/font_size = 17
 text = "Map"
 
 [node name="RoomSize1" type="Sprite2D" parent="."]
-position = Vector2(128, 92)
+visible = false
+position = Vector2(123, 92)
 texture = ExtResource("31_feyix")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(64, 180)
+texture = ExtResource("32_037rj")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8xme34hdxw4f"]
+
+[ext_resource type="Texture2D" uid="uid://c7uo4rvh10yi" path="res://Art/UISprites/Franuka/1x/Resource orbs/Orb_HP.png" id="1_j5rju"]
+[ext_resource type="Texture2D" uid="uid://f27weei7tjv0" path="res://Art/UISprites/Franuka/1x/Resource orbs/DecoratedFrame1_Left.png" id="1_kfoyp"]
+[ext_resource type="Texture2D" uid="uid://dsnlhl2uxruw1" path="res://Art/UISprites/Franuka/1x/Resource orbs/Orb_Frame_Empty.png" id="2_f3cmo"]
+[ext_resource type="FontFile" uid="uid://d4ck5rngcth87" path="res://Art/UISprites/Franuka/Fonts/FantasyRPGtitleOutline (size 20).ttf" id="4_p0i4w"]
+
+[node name="Health" type="Node2D"]
+
+[node name="OrbEnergy" type="TextureProgressBar" parent="."]
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 40.0
+offset_bottom = 24.0
+fill_mode = 2
+texture_under = ExtResource("1_j5rju")
+texture_progress = ExtResource("2_f3cmo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kfoyp")
+
+[node name="Number Label" type="Label" parent="."]
+offset_left = 4.0
+offset_top = -15.0
+offset_right = 30.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("4_p0i4w")
+theme_override_font_sizes/font_size = 20
+text = "72"
+horizontal_alignment = 1
+vertical_alignment = 1
