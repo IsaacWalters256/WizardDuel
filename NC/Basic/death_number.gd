@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var top_card_id = "Card0"
-@export var bottom_card_id = "Card4"
+@export var bottom_card_id = "Card1"
 var health = self
 @onready var main = get_parent().get_parent().get_parent()
 
@@ -24,7 +24,7 @@ func score_double():
 				amount = amount + bottom_card.card_info[2][1]
 			if bottom_card.card_info[2][1] == 0:
 				amount = amount - 5
-		if top_card.card_info[2][1] < 15:
+		if top_card.card_info[2][1] < 13:
 			if top_card.card_info[2][1] > 10:
 				amount = amount + 10
 			else:

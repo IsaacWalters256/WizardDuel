@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://rd2nx4s1bpwp"]
-
-[ext_resource type="Script" uid="uid://c72xp6b8hedow" path="res://NC/Basic/input_taker.gd" id="1_s0gmb"]
-
-[node name="InputTaker" type="Node2D"]
-script = ExtResource("1_s0gmb")

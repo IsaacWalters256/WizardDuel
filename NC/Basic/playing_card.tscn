@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnixjypc01xbm"]
+[gd_scene load_steps=4 format=3 uid="uid://bnixjypc01xbm"]
 
 [ext_resource type="Script" uid="uid://dg4c6ql71kmts" path="res://NC/Basic/playing_card.gd" id="1_ahha0"]
 [ext_resource type="Texture2D" uid="uid://dfsetobb5aouo" path="res://Art/UISprites/CardsOrderChanged.png" id="2_rppwh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rppwh"]
+size = Vector2(55, 79)
 
 [node name="PlayingCard" type="Node2D"]
 script = ExtResource("1_ahha0")
@@ -17,3 +20,9 @@ frame = 2
 texture = ExtResource("2_rppwh")
 hframes = 15
 vframes = 6
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_rppwh")

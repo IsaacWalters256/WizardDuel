@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpx233wphb1xr"]
+
+[ext_resource type="Texture2D" uid="uid://ba027qtvggkcv" path="res://Art/UISprites/potions-Sheet.png" id="1_vota3"]
+
+[node name="Pockets" type="Node2D"]
+
+[node name="Potions-sheet" type="Sprite2D" parent="."]
+position = Vector2(233, 73)
+texture = ExtResource("1_vota3")

@@ -52,8 +52,8 @@ func shuffle_and_back():
 func change_our_back():
 	get_node("DeckSprite").frame = card_order[card_order.size()-1][1]
 
-func in_focus(focused):
-	get_node("1By1").visible = focused
+#func in_focus(focused):
+#	get_node("1By1").visible = focused
 
 func draw_card(from_top,location,save_to,board_spot="na"):
 	#if from top == true
@@ -73,19 +73,19 @@ func draw_card(from_top,location,save_to,board_spot="na"):
 	return created_card
 
 
-func _on_button_button_down() -> void:
-	in_focus(true)
+#func _on_button_button_down() -> void:
+#	in_focus(true)
 
-func _on_button_button_up() -> void:
-	in_focus(false)
+#func _on_button_button_up() -> void:
+#	in_focus(false)
 	#draw_card(true)
 
 
 
-func _on_button_mouse_entered() -> void:
-	if locked == false:
-		in_focus(true)
-
-func _on_button_mouse_exited() -> void:
-	if locked == false:
-		in_focus(false)
+#func _on_button_mouse_entered() -> void:
+	#if locked == false:
+		#in_focus(true)
+#
+#func _on_button_mouse_exited() -> void:
+	#if locked == false:
+		#in_focus(false)

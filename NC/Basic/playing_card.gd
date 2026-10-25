@@ -4,10 +4,19 @@ var card_info = []
 var face_down = true
 var locked = true
 
+var what_is = "map_card"
+var status = "locked"
+
 func start(card_info_ref):
 	card_info = card_info_ref
 	get_node("Front").frame = card_info[0]
 	get_node("Back").frame = card_info[1]
+
+func lock_card(to_be_locked):
+	if to_be_locked:
+		status = "locked"
+	else:
+		status = "unlocked"
 
 func movement(type):
 	var tween0 = get_parent().get_parent().get_parent().pauser.get_tween(self)

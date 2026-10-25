@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo8w1c5c0carg"]
+
+[ext_resource type="Script" uid="uid://bwiamsajeonvl" path="res://NC/Basic/mouse_hit.gd" id="1_vmvo2"]
+[ext_resource type="Texture2D" uid="uid://c5y56xccw75a2" path="res://Art/UISprites/Franuka/1x/Cursors/Gauntlet.png" id="2_alk6g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dja10"]
+size = Vector2(2, 2)
+
+[node name="MouseHit" type="Node2D"]
+script = ExtResource("1_vmvo2")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_dja10")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -2)
+texture = ExtResource("2_alk6g")
+centered = false
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

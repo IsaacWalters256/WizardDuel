@@ -1,39 +1,19 @@
-[gd_scene load_steps=37 format=3 uid="uid://cmtuk85j7jriu"]
+[gd_scene load_steps=17 format=3 uid="uid://cmtuk85j7jriu"]
 
 [ext_resource type="Texture2D" uid="uid://djsdgf8vyo5sq" path="res://Art/UISprites/MapSize.png" id="1_m13f2"]
 [ext_resource type="Script" uid="uid://csodfgph3q02f" path="res://NC/Basic/other_main.gd" id="1_s1dh6"]
 [ext_resource type="PackedScene" uid="uid://cer8nle4f7dym" path="res://NC/UIParts/text_paper_1.tscn" id="2_s1dh6"]
+[ext_resource type="PackedScene" uid="uid://03aseahwfiag" path="res://NC/Basic/book.tscn" id="3_8tocs"]
 [ext_resource type="Texture2D" uid="uid://dm58likbogjt" path="res://Art/UISprites/Franuka/1x/Background boxes/BGbox_04A.png" id="3_e5ia1"]
 [ext_resource type="PackedScene" uid="uid://c30yx664cmgrg" path="res://NC/Basic/clock.tscn" id="4_e5ia1"]
-[ext_resource type="Texture2D" uid="uid://onhmjg1g3f1x" path="res://Art/UISprites/CutHand.png" id="4_feyix"]
-[ext_resource type="Texture2D" uid="uid://osat6bqmslgw" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Archer/Archer/Archer_Death.png" id="5_037rj"]
 [ext_resource type="PackedScene" uid="uid://bu6c33s77tbak" path="res://NC/Basic/current_map.tscn" id="5_bu521"]
 [ext_resource type="PackedScene" uid="uid://b8xme34hdxw4f" path="res://NC/Basic/health.tscn" id="5_sou63"]
-[ext_resource type="Texture2D" uid="uid://cqeonkj3kkoqv" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Armored Axeman/Armored Axeman/Armored Axeman_Attack01.png" id="6_sou63"]
-[ext_resource type="Texture2D" uid="uid://bj2t55u21jlil" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Armored Orc/Armored Orc/Armored Orc_Attack01.png" id="7_nvivf"]
-[ext_resource type="Texture2D" uid="uid://bjbh28rtv4uj0" path="res://Art/UISprites/256by100-export.png" id="8_bu521"]
-[ext_resource type="Texture2D" uid="uid://b6kt77vqgpuf6" path="res://Art/UISprites/Franuka/SpellbookFullSprite.png" id="9_r3ew1"]
-[ext_resource type="Texture2D" uid="uid://b0qmm1q56ybtc" path="res://Art/UISprites/Franuka/1x/Resource orbs/DecoratedFrame1_Right.png" id="10_r3504"]
-[ext_resource type="Texture2D" uid="uid://f27weei7tjv0" path="res://Art/UISprites/Franuka/1x/Resource orbs/DecoratedFrame1_Left.png" id="11_h04ff"]
-[ext_resource type="Texture2D" uid="uid://cdleph3kwah2l" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Armor.png" id="12_elwit"]
-[ext_resource type="Texture2D" uid="uid://jd0wrngweds" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Consumable.png" id="13_ot706"]
-[ext_resource type="Texture2D" uid="uid://cugbi6qwa2wxc" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Empty.png" id="14_us1t1"]
-[ext_resource type="Texture2D" uid="uid://dtqctca0rytn3" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Footwear.png" id="15_xgmkd"]
-[ext_resource type="Texture2D" uid="uid://dus3cp045e4bv" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Gloves.png" id="16_irggt"]
-[ext_resource type="Texture2D" uid="uid://bdcdvdjcq2u6w" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Headgear.png" id="17_ta5is"]
-[ext_resource type="Texture2D" uid="uid://blhx2dqskibyh" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Necklace.png" id="18_7iacs"]
-[ext_resource type="Texture2D" uid="uid://dlbjpul1tekn" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Potion.png" id="19_5qxvf"]
-[ext_resource type="Texture2D" uid="uid://dfdepa0o1igru" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Ring.png" id="20_fg21o"]
-[ext_resource type="Texture2D" uid="uid://5javf78uvha3" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Shield.png" id="21_buuue"]
-[ext_resource type="Texture2D" uid="uid://2mjil8u4l2hf" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Weapon.png" id="22_rp3ha"]
-[ext_resource type="Texture2D" uid="uid://ba027qtvggkcv" path="res://Art/UISprites/potions-Sheet.png" id="23_10oc2"]
-[ext_resource type="Texture2D" uid="uid://c7uo4rvh10yi" path="res://Art/UISprites/Franuka/1x/Resource orbs/Orb_HP.png" id="24_6k4ib"]
-[ext_resource type="Texture2D" uid="uid://cs1mtr6pvoakc" path="res://Art/UISprites/Franuka/1x/Mini icons/Icon_03_Outline.png" id="25_tqu8u"]
-[ext_resource type="Texture2D" uid="uid://d36wrdm5ww4to" path="res://Art/UISprites/updated-card-2026.png" id="26_mocm2"]
-[ext_resource type="FontFile" uid="uid://fivn0sjhcsl5" path="res://Art/UISprites/Franuka/Fonts/FantasyRPGtitle (size 17).ttf" id="27_kfk1x"]
+[ext_resource type="PackedScene" uid="uid://rwypjrwlawly" path="res://NC/Basic/holding_hand.tscn" id="14_m4k86"]
 [ext_resource type="PackedScene" uid="uid://bm8u55pt0j3ye" path="res://NC/Basic/map_deck.tscn" id="28_5vust"]
 [ext_resource type="Texture2D" uid="uid://sykxoonmjq1u" path="res://Art/UISprites/RoomSize1.png" id="31_feyix"]
 [ext_resource type="Texture2D" uid="uid://do1qjx8u8hctf" path="res://Art/UISprites/Franuka/1x/Dividers/Divider_07.png" id="32_037rj"]
+[ext_resource type="PackedScene" uid="uid://bo8w1c5c0carg" path="res://NC/Basic/mouse_hit.tscn" id="35_bu521"]
+[ext_resource type="PackedScene" uid="uid://dpx233wphb1xr" path="res://NC/Basic/pockets.tscn" id="35_r3ew1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2bm8"]
 texture = ExtResource("3_e5ia1")
@@ -59,6 +39,13 @@ position = Vector2(256, 152)
 scale = Vector2(2.0625, 1.6)
 texture = ExtResource("1_m13f2")
 
+[node name="Book" parent="." instance=ExtResource("3_8tocs")]
+position = Vector2(387, 184)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(64, 180)
+texture = ExtResource("32_037rj")
+
 [node name="MapDeck" parent="." instance=ExtResource("28_5vust")]
 position = Vector2(32, 224)
 
@@ -70,169 +57,19 @@ position = Vector2(243, 40)
 [node name="Health" parent="." instance=ExtResource("5_sou63")]
 position = Vector2(222, 88)
 
+[node name="Pockets" parent="." instance=ExtResource("35_r3ew1")]
+position = Vector2(261, 2)
+
 [node name="TextPaper1" parent="." instance=ExtResource("2_s1dh6")]
 visible = false
 tile_set = SubResource("TileSet_nin8b")
 layer_0/tile_data = PackedInt32Array(786433, 65536, 0, 786434, 65536, 0, 786435, 65536, 0, 786436, 65536, 0, 786437, 65536, 0, 786438, 65536, 0, 786439, 65536, 0, 786440, 131072, 0, 851976, 131072, 1, 917512, 131072, 1, 983048, 131072, 1, 1048584, 131072, 1, 1179656, 131072, 2, 1114120, 131072, 1, 1179655, 65536, 2, 1179654, 65536, 2, 1179653, 65536, 2, 1179652, 65536, 2, 1179651, 65536, 2, 1179650, 65536, 2, 1179649, 65536, 2, 786432, 0, 0, 851968, 0, 1, 917504, 0, 1, 983040, 0, 1, 1048576, 0, 1, 1114112, 0, 1, 1179648, 0, 2, 1114113, 65536, 1, 1114114, 65536, 1, 1114115, 65536, 1, 1114116, 65536, 1, 1114117, 65536, 1, 1114118, 65536, 1, 1114119, 65536, 1, 1048583, 65536, 1, 983047, 65536, 1, 917511, 65536, 1, 851975, 65536, 1, 851974, 65536, 1, 851973, 65536, 1, 851972, 65536, 1, 851971, 65536, 1, 851970, 65536, 1, 851969, 65536, 1, 917505, 65536, 1, 983041, 65536, 1, 1048577, 65536, 1, 1048578, 65536, 1, 1048579, 65536, 1, 1048580, 65536, 1, 1048581, 65536, 1, 983045, 65536, 1, 983046, 65536, 1, 917510, 65536, 1, 1048582, 65536, 1, 917509, 65536, 1, 917508, 65536, 1, 917507, 65536, 1, 917506, 65536, 1, 983042, 65536, 1, 983043, 65536, 1, 983044, 65536, 1)
-
-[node name="CutHand" type="Sprite2D" parent="."]
-position = Vector2(144, 173)
-texture = ExtResource("4_feyix")
-
-[node name="ArcherDeath" type="Sprite2D" parent="."]
-position = Vector2(348, 206)
-texture = ExtResource("5_037rj")
-
-[node name="ArmoredAxemanAttack01" type="Sprite2D" parent="."]
-position = Vector2(577, 202)
-texture = ExtResource("6_sou63")
-
-[node name="ArmoredOrcAttack01" type="Sprite2D" parent="."]
-position = Vector2(466, 210)
-texture = ExtResource("7_nvivf")
-
-[node name="256By100-export" type="Sprite2D" parent="."]
-position = Vector2(385, 49)
-texture = ExtResource("8_bu521")
-
-[node name="256By100-export2" type="Sprite2D" parent="."]
-position = Vector2(384, 248)
-texture = ExtResource("8_bu521")
-
-[node name="256By100-export3" type="Sprite2D" parent="."]
-position = Vector2(381, 151)
-texture = ExtResource("8_bu521")
-
-[node name="SpellbookFullSprite" type="Sprite2D" parent="."]
-position = Vector2(392, 176)
-texture = ExtResource("9_r3ew1")
-hframes = 8
-vframes = 4
-
-[node name="Label" type="Label" parent="."]
-offset_left = -128.0
-offset_top = 24.0
-offset_right = -46.0
-offset_bottom = 47.0
-text = "7 by 7 tiles"
-
-[node name="DecoratedFrame1Right" type="Sprite2D" parent="."]
-position = Vector2(304, 233)
-texture = ExtResource("10_r3504")
-
-[node name="DecoratedFrame1Left" type="Sprite2D" parent="."]
-position = Vector2(316, 259)
-texture = ExtResource("11_h04ff")
-
-[node name="Slot01Armor" type="Sprite2D" parent="."]
-position = Vector2(318, 203)
-texture = ExtResource("12_elwit")
-
-[node name="Slot01Consumable" type="Sprite2D" parent="."]
-position = Vector2(338, 203)
-texture = ExtResource("13_ot706")
-
-[node name="Slot01Empty" type="Sprite2D" parent="."]
-position = Vector2(293, 247)
-texture = ExtResource("14_us1t1")
-
-[node name="Slot01Footwear" type="Sprite2D" parent="."]
-position = Vector2(318, 222)
-texture = ExtResource("15_xgmkd")
-
-[node name="Slot01Gloves" type="Sprite2D" parent="."]
-position = Vector2(300, 203)
-texture = ExtResource("16_irggt")
-
-[node name="Slot01Headgear" type="Sprite2D" parent="."]
-position = Vector2(318, 185)
-texture = ExtResource("17_ta5is")
-
-[node name="Slot01Necklace" type="Sprite2D" parent="."]
-position = Vector2(337, 185)
-texture = ExtResource("18_7iacs")
-
-[node name="Slot01Potion" type="Sprite2D" parent="."]
-position = Vector2(357, 203)
-texture = ExtResource("19_5qxvf")
-
-[node name="Slot01Ring" type="Sprite2D" parent="."]
-position = Vector2(299, 184)
-texture = ExtResource("20_fg21o")
-
-[node name="Slot01Shield" type="Sprite2D" parent="."]
-position = Vector2(300, 222)
-texture = ExtResource("21_buuue")
-
-[node name="Slot01Weapon" type="Sprite2D" parent="."]
-position = Vector2(336, 222)
-texture = ExtResource("22_rp3ha")
-
-[node name="Potions-sheet" type="Sprite2D" parent="."]
-position = Vector2(497, 75)
-texture = ExtResource("23_10oc2")
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = -101.0
-offset_top = 66.0
-offset_right = -53.0
-offset_bottom = 114.0
-max_value = 40.0
-value = 20.0
-fill_mode = 3
-texture_progress = ExtResource("24_6k4ib")
-
-[node name="Icon03Outline" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(107, 50)
-texture = ExtResource("25_tqu8u")
-
-[node name="Icon03Outline2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(96, 55)
-texture = ExtResource("25_tqu8u")
-
-[node name="Icon03Outline3" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(119, 56)
-texture = ExtResource("25_tqu8u")
-
-[node name="Icon03Outline4" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(119, 67)
-texture = ExtResource("25_tqu8u")
-
-[node name="Icon03Outline5" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(97, 68)
-texture = ExtResource("25_tqu8u")
-
-[node name="Icon03Outline6" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(108, 74)
-texture = ExtResource("25_tqu8u")
-
-[node name="Updated-card-2026" type="Sprite2D" parent="."]
-position = Vector2(-36, 143)
-texture = ExtResource("26_mocm2")
-hframes = 15
-vframes = 6
-
-[node name="Label2" type="Label" parent="."]
-offset_left = 238.0
-offset_top = 50.0
-offset_right = 278.0
-offset_bottom = 73.0
-rotation = -1.59833
-theme_override_fonts/font = ExtResource("27_kfk1x")
-theme_override_font_sizes/font_size = 17
-text = "Map"
 
 [node name="RoomSize1" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(123, 92)
 texture = ExtResource("31_feyix")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(64, 180)
-texture = ExtResource("32_037rj")
+[node name="MouseHit" parent="." instance=ExtResource("35_bu521")]
+
+[node name="HoldingHand" parent="." instance=ExtResource("14_m4k86")]

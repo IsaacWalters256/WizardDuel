@@ -23,9 +23,11 @@ func pause_all(is_pausing):
 	set_pause_subtree(get_parent().get_node("OtherMain"), paused)
 	
 	if paused:
+		get_parent().get_node("MouseFollow").visible = true
 		for m in mega_tween:
 			mega_tween[m].pause()
 	else:
+		get_parent().get_node("MouseFollow").visible = false
 		for m in mega_tween:
 			mega_tween[m].play()
 

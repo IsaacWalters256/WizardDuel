@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var pauser = get_parent().get_node("Pauser")
-@onready var mouser = get_parent().get_node("MouseFollow")
 
 @onready var map = get_node("CurrentMap")
 @onready var deck = get_node("MapDeck")
@@ -10,7 +9,7 @@ extends Node2D
 #var input_locked = true
 
 func start():
-	mouser.start()
+	get_node("MouseHit").start()
 	start_new_game()
 #TODO instead of starting it like this, start it with the book and they press a new game button or a save button or something and the book moves down to its spot and everything initializes and the deck spits out its cards
 
@@ -49,8 +48,17 @@ func round_end():
 	ending_tween.tween_callback(map.cards["Hand"].movement.bind(["flip"])).set_delay(1.5)
 	ending_tween.tween_property(map.cards["Hand"], "modulate", Color(1,1,1,0), 0.5).set_delay(1.5)
 
-
-
 func lost_game():
 	reset_game()
 	print("lost the game")
+
+func enter_card(which):
+	for c in get_node("CurrentMap").cards:
+		get_node("CurrentMap").cards[c].lock_card(true)
+	
+
+func exit_room():
+	for c in get_node("CurrentMap").cards:
+		if !get_node("CurrentMap").cards[c].face_down:#doesnt account for damage currently being delt
+			get_node("CurrentMap").cards[c].lock_card(false)
+	

@@ -39,23 +39,36 @@ func reset_board():
 func flip_starting_cards():#needed or else tween breaks
 	var board_setting_tween = get_parent().pauser.get_tween(self)
 	board_setting_tween.tween_callback(get_node("HandSpot").get_child(0).movement.bind(["flip"])).set_delay(0.5)
-	board_setting_tween.tween_callback(get_node("Spot0").get_child(0).movement.bind(["flip"])).set_delay(0.5)
-	board_setting_tween.tween_callback(get_node("Spot1").get_child(0).movement.bind(["flip"])).set_delay(0.5)
+	board_setting_tween.tween_callback(self.flip_next_card).set_delay(0.5)
+	board_setting_tween.tween_callback(self.flip_next_card).set_delay(0.5)
 	
 	board_setting_tween.tween_callback(get_parent().game_board_ready).set_delay(0.3)
 
 func flip_next_card():
-	if cards["Card2"].face_down:
+	if cards["Card0"].face_down:
+		cards["Card0"].movement(["flip"])
+		cards["Card0"].lock_card(false)
+	elif cards["Card1"].face_down:
+		cards["Card1"].movement(["flip"])
+		cards["Card1"].lock_card(false)
+	elif cards["Card2"].face_down:
 		cards["Card2"].movement(["flip"])
+		cards["Card2"].lock_card(false)
 	elif cards["Card3"].face_down:
 		cards["Card3"].movement(["flip"])
+		cards["Card3"].lock_card(false)
 	elif cards["Card4"].face_down:
 		cards["Card4"].movement(["flip"])
+		cards["Card4"].lock_card(false)
 	elif cards["Card5"].face_down:
 		cards["Card5"].movement(["flip"])
+		cards["Card5"].lock_card(false)
 
 func deal_damage():
 	var ending_tween = get_parent().pauser.get_tween(self)
+	
+	for c in cards:
+		cards[c].lock_card(true)
 	
 	ending_tween.tween_callback(get_node("CardDamagers/Left").score_double).set_delay(0.1)
 	ending_tween.tween_callback(get_node("CardDamagers/Mid").score_double).set_delay(2.5)

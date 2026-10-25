@@ -1,0 +1,65 @@
+[gd_scene load_steps=13 format=3 uid="uid://03aseahwfiag"]
+
+[ext_resource type="Texture2D" uid="uid://cdleph3kwah2l" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Armor.png" id="1_tafot"]
+[ext_resource type="Texture2D" uid="uid://b6kt77vqgpuf6" path="res://Art/UISprites/Franuka/SpellbookFullSprite.png" id="1_y8ban"]
+[ext_resource type="Texture2D" uid="uid://jd0wrngweds" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Consumable.png" id="2_y8ban"]
+[ext_resource type="Texture2D" uid="uid://cugbi6qwa2wxc" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Empty.png" id="3_ldpwt"]
+[ext_resource type="Texture2D" uid="uid://dtqctca0rytn3" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Footwear.png" id="4_fj0v8"]
+[ext_resource type="Texture2D" uid="uid://dus3cp045e4bv" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Gloves.png" id="5_5s2f1"]
+[ext_resource type="Texture2D" uid="uid://bdcdvdjcq2u6w" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Headgear.png" id="6_wix4a"]
+[ext_resource type="Texture2D" uid="uid://blhx2dqskibyh" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Necklace.png" id="7_ahi0l"]
+[ext_resource type="Texture2D" uid="uid://dlbjpul1tekn" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Potion.png" id="8_qwanr"]
+[ext_resource type="Texture2D" uid="uid://dfdepa0o1igru" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Ring.png" id="9_vwnte"]
+[ext_resource type="Texture2D" uid="uid://5javf78uvha3" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Shield.png" id="10_pd4kd"]
+[ext_resource type="Texture2D" uid="uid://2mjil8u4l2hf" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Weapon.png" id="11_5l4yn"]
+
+[node name="Book" type="Node2D"]
+
+[node name="SpellbookFullSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_y8ban")
+hframes = 8
+vframes = 4
+
+[node name="Slot01Armor" type="Sprite2D" parent="."]
+position = Vector2(-65, 13)
+texture = ExtResource("1_tafot")
+
+[node name="Slot01Consumable" type="Sprite2D" parent="."]
+position = Vector2(-45, 13)
+texture = ExtResource("2_y8ban")
+
+[node name="Slot01Empty" type="Sprite2D" parent="."]
+position = Vector2(-90, 57)
+texture = ExtResource("3_ldpwt")
+
+[node name="Slot01Footwear" type="Sprite2D" parent="."]
+position = Vector2(-65, 32)
+texture = ExtResource("4_fj0v8")
+
+[node name="Slot01Gloves" type="Sprite2D" parent="."]
+position = Vector2(-83, 13)
+texture = ExtResource("5_5s2f1")
+
+[node name="Slot01Headgear" type="Sprite2D" parent="."]
+position = Vector2(-65, -5)
+texture = ExtResource("6_wix4a")
+
+[node name="Slot01Necklace" type="Sprite2D" parent="."]
+position = Vector2(-46, -5)
+texture = ExtResource("7_ahi0l")
+
+[node name="Slot01Potion" type="Sprite2D" parent="."]
+position = Vector2(-26, 13)
+texture = ExtResource("8_qwanr")
+
+[node name="Slot01Ring" type="Sprite2D" parent="."]
+position = Vector2(-84, -6)
+texture = ExtResource("9_vwnte")
+
+[node name="Slot01Shield" type="Sprite2D" parent="."]
+position = Vector2(-83, 32)
+texture = ExtResource("10_pd4kd")
+
+[node name="Slot01Weapon" type="Sprite2D" parent="."]
+position = Vector2(-47, 32)
+texture = ExtResource("11_5l4yn")

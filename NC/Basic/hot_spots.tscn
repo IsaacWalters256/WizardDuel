@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo8boot1cu610"]
+
+[ext_resource type="Script" uid="uid://dvc7agg0c6jkv" path="res://NC/Basic/hot_spots.gd" id="1_fhbo6"]
+[ext_resource type="Texture2D" uid="uid://dfsetobb5aouo" path="res://Art/UISprites/CardsOrderChanged.png" id="2_e6t5r"]
+[ext_resource type="PackedScene" uid="uid://cmb81p1uha0qu" path="res://NC/RoomHotSpots/room_hot_spot.tscn" id="3_jorwl"]
+
+[node name="HotSpots" type="Node2D"]
+script = ExtResource("1_fhbo6")
+
+[node name="Sample" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(1.5, 3)
+texture = ExtResource("2_e6t5r")
+hframes = 15
+vframes = 6
+frame = 12
+
+[node name="MidMid" parent="." instance=ExtResource("3_jorwl")]
+
+[node name="LefMid" parent="." instance=ExtResource("3_jorwl")]
+position = Vector2(-80, 0)
+
+[node name="RigMid" parent="." instance=ExtResource("3_jorwl")]
+position = Vector2(80, 0)
+
+[node name="LefTop" parent="." instance=ExtResource("3_jorwl")]
+position = Vector2(-80, -13)
+
+[node name="LefBot" parent="." instance=ExtResource("3_jorwl")]
+position = Vector2(-80, 13)
+
+[node name="RigTop" parent="." instance=ExtResource("3_jorwl")]
+position = Vector2(80, -13)
+
+[node name="RigBot" parent="." instance=ExtResource("3_jorwl")]
+position = Vector2(80, 13)
+
+[node name="MidTop" parent="." instance=ExtResource("3_jorwl")]
+position = Vector2(0, -13)
+
+[node name="MidBot" parent="." instance=ExtResource("3_jorwl")]
+position = Vector2(0, 13)
+
+[node name="LThTop" parent="." instance=ExtResource("3_jorwl")]
+position = Vector2(-42, -13)
+
+[node name="LThBot" parent="." instance=ExtResource("3_jorwl")]
+position = Vector2(-42, 13)
+
+[node name="RThTop" parent="." instance=ExtResource("3_jorwl")]
+position = Vector2(42, -13)
+
+[node name="RThBot" parent="." instance=ExtResource("3_jorwl")]
+position = Vector2(42, 13)
+
+[node name="LThMid" parent="." instance=ExtResource("3_jorwl")]
+position = Vector2(-42, 0)
+
+[node name="RThMid" parent="." instance=ExtResource("3_jorwl")]
+position = Vector2(42, 0)
