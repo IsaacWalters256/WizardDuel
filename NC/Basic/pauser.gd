@@ -1,5 +1,6 @@
 extends Node2D
 
+var pause_locked = false
 var paused = false
 var mega_tween = {
 	
@@ -32,3 +33,21 @@ func set_pause_subtree(root: Node, pause: bool) -> void: #from godot docs forum
 	var process_setters = ["set_process", "set_physics_process", "set_process_input", "set_process_unhandled_input", "set_process_unhandled_key_input", "set_process_shortcut_input",]
 	for setter in process_setters:
 		root.propagate_call(setter, [!pause])
+
+
+
+
+
+
+func _on_texture_button_mouse_entered() -> void:
+	if pause_locked == false:
+		pause_all(true)
+
+
+func _on_texture_button_mouse_exited() -> void:
+	if pause_locked == false:
+		pause_all(false)
+
+
+func _on_texture_button_pressed() -> void:
+	pause_locked = !pause_locked

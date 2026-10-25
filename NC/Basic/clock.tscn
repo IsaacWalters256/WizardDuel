@@ -13,6 +13,7 @@ offset_left = -40.0
 offset_top = -24.0
 offset_right = 8.0
 offset_bottom = 24.0
+value = 100.0
 fill_mode = 4
 texture_under = ExtResource("2_kr861")
 texture_progress = ExtResource("3_kr861")

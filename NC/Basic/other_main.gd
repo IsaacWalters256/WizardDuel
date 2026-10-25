@@ -1,86 +1,56 @@
 extends Node2D
 
 @onready var pauser = get_parent().get_node("Pauser")
-var cards = {
-	"Card0":null,
-	"Card1":null,
-	"Card2":null,
-	"Card3":null,
-	"Card4":null,
-	"Card5":null,
-	"Hand":null,
-}
+@onready var mouser = get_parent().get_node("MouseFollow")
+
+@onready var map = get_node("CurrentMap")
+@onready var deck = get_node("MapDeck")
+@onready var health = get_node("Health")
+@onready var clock = get_node("Clock")
+#var input_locked = true
 
 func start():
-	get_node("Clock").start()
-	create_deck()
-	reset_board()
+	mouser.start()
+	start_new_game()
 #TODO instead of starting it like this, start it with the book and they press a new game button or a save button or something and the book moves down to its spot and everything initializes and the deck spits out its cards
 
-func game_board_ready():
-	get_node("Clock").time(true)
+func reset_game():
+	start_new_game()
 
+func start_new_game():#mess with passing save data here eventually
+	clock.start()
+	deck.create_deck()
+	health.reset_health()
+	map.start(deck)
+	start_new_round()
 
-
-func create_deck():
-	var deck = []
-	for suit in 4:#0,1,2,3
-		deck.append([suit*15,(suit*15)+1,[suit,0]])
-		for number in 13:
-			deck.append([(suit*15)+2+number,(suit*15)+1,[suit,number+1]])
-	deck.shuffle()
-	print(deck)
-	get_node("MapDeck").start(deck)
-
-
-
-
-func reset_board():
-	var board_setting_tween = pauser.get_tween(self)
-	var card_draw_delay = 0.5
-	for i in range(6):
-		board_setting_tween.tween_callback(get_node("MapDeck").draw_card.bind(true,get_node("CardSpots"),get_node("CardSpots/Spot"+str(i)),"Card"+str(i))).set_delay(card_draw_delay)
+func start_new_round(shuffle_finished = false):
+	if !shuffle_finished:
+		deck.reshuffle("all")
+	else:
+		map.reset_board()
+		clock.reset_time()
 	
-	if get_node("CardSpots/HandSpot").get_child_count() < 1:
-		board_setting_tween.tween_callback(get_node("MapDeck").draw_card.bind(true,get_node("CardSpots"),get_node("CardSpots/HandSpot"),"Hand")).set_delay(card_draw_delay)
-		
-	board_setting_tween.tween_callback(self.flip_starting_cards).set_delay(1)
 
-func flip_next_card():
-	if cards["Card2"].face_down:
-		cards["Card2"].movement(["flip"])
-	elif cards["Card3"].face_down:
-		cards["Card3"].movement(["flip"])
-	elif cards["Card4"].face_down:
-		cards["Card4"].movement(["flip"])
-	elif cards["Card5"].face_down:
-		cards["Card5"].movement(["flip"])
+func new_round_or_new_game():
+	if health.hp.value > 0:
+		start_new_round()
+	else:
+		lost_game()
+
+func game_board_ready():
+	clock.time(true)
+	#input_locked = false
 
 func round_end():
-	print("over")
+	map.deal_damage()
 	var ending_tween = pauser.get_tween(self)
-	ending_tween.tween_callback(score_double.bind(["Card0,Card3"])).set_delay(0.1)
-	ending_tween.tween_callback(score_double.bind(["Card0,Card3"])).set_delay(1)
-	ending_tween.tween_callback(score_double.bind(["Card0,Card3"])).set_delay(1)
-	#ending_tween.tween_callback(score_double.bind(["Card0,Card3"])).set_delay(0.1)
-	#flip the left two cards, tween a number label to the blood thing,increase it
-	#mid two
-	#right two
-	#flip hand over, move all cards into the deck
-
-func score_double(two_cards):
-	pass
-	#checks the two cards
-	#tweens a label to go to the health node
-	#tween health node callback lose health (lowers it over time in this tween)
-	#health node will then check for a lose
-
-func flip_starting_cards():
-	var board_setting_tween = pauser.get_tween(self)
-	if get_node("CardSpots/HandSpot").get_child(0).face_down:
-		board_setting_tween.tween_callback(get_node("CardSpots/HandSpot").get_child(0).movement.bind(["flip"])).set_delay(0.5)
 	
-	board_setting_tween.tween_callback(get_node("CardSpots/Spot0").get_child(0).movement.bind(["flip"])).set_delay(0.5)
-	board_setting_tween.tween_callback(get_node("CardSpots/Spot1").get_child(0).movement.bind(["flip"])).set_delay(0.5)
-	
-	board_setting_tween.tween_callback(self.game_board_ready).set_delay(0.3)
+	ending_tween.tween_callback(map.cards["Hand"].movement.bind(["flip"])).set_delay(1.5)
+	ending_tween.tween_property(map.cards["Hand"], "modulate", Color(1,1,1,0), 0.5).set_delay(1.5)
+
+
+
+func lost_game():
+	reset_game()
+	print("lost the game")

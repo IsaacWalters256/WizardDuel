@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfrsxt3nqgkfc"]
+
+[ext_resource type="Script" uid="uid://d015dg040vp4l" path="res://mouse_follow.gd" id="1_perbt"]
+[ext_resource type="Texture2D" uid="uid://c5y56xccw75a2" path="res://Art/UISprites/Franuka/1x/Cursors/Gauntlet.png" id="2_2wtyy"]
+
+[node name="MouseFollow" type="Node2D"]
+visible = false
+script = ExtResource("1_perbt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_2wtyy")
+centered = false

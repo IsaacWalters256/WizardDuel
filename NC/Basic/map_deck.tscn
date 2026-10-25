@@ -17,6 +17,7 @@ texture = ExtResource("2_bmmhk")
 texture = ExtResource("3_bmmhk")
 hframes = 15
 vframes = 6
+frame = 31
 
 [node name="Button" type="TextureButton" parent="."]
 offset_left = -30.0

@@ -1,20 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8xme34hdxw4f"]
+[gd_scene load_steps=6 format=3 uid="uid://b8xme34hdxw4f"]
 
+[ext_resource type="Script" uid="uid://bbypgakjs7fva" path="res://NC/Basic/health.gd" id="1_f3cmo"]
 [ext_resource type="Texture2D" uid="uid://c7uo4rvh10yi" path="res://Art/UISprites/Franuka/1x/Resource orbs/Orb_HP.png" id="1_j5rju"]
 [ext_resource type="Texture2D" uid="uid://f27weei7tjv0" path="res://Art/UISprites/Franuka/1x/Resource orbs/DecoratedFrame1_Left.png" id="1_kfoyp"]
 [ext_resource type="Texture2D" uid="uid://dsnlhl2uxruw1" path="res://Art/UISprites/Franuka/1x/Resource orbs/Orb_Frame_Empty.png" id="2_f3cmo"]
 [ext_resource type="FontFile" uid="uid://d4ck5rngcth87" path="res://Art/UISprites/Franuka/Fonts/FantasyRPGtitleOutline (size 20).ttf" id="4_p0i4w"]
 
 [node name="Health" type="Node2D"]
+script = ExtResource("1_f3cmo")
 
 [node name="OrbEnergy" type="TextureProgressBar" parent="."]
 offset_left = -8.0
 offset_top = -24.0
 offset_right = 40.0
 offset_bottom = 24.0
-fill_mode = 2
-texture_under = ExtResource("1_j5rju")
-texture_progress = ExtResource("2_f3cmo")
+max_value = 72.0
+fill_mode = 3
+texture_under = ExtResource("2_f3cmo")
+texture_progress = ExtResource("1_j5rju")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_kfoyp")
@@ -26,6 +29,6 @@ offset_right = 30.0
 offset_bottom = 13.0
 theme_override_fonts/font = ExtResource("4_p0i4w")
 theme_override_font_sizes/font_size = 20
-text = "72"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1

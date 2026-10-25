@@ -9,8 +9,44 @@ var locked = false
 @export var save_cards_to = Node2D
 @export var draw_to = Node2D
 
-func start(contents):
-	card_order = contents
+
+
+func start():
+	create_deck()
+	change_our_back()
+
+func create_deck():
+	var deck = []
+	for suit in 4:#0,1,2,3
+		deck.append([suit*15,(suit*15)+1,[suit,0]])
+		for number in 13:
+			deck.append([(suit*15)+2+number,(suit*15)+1,[suit,number+1]])
+	deck.shuffle()
+	card_order = deck
+
+func reshuffle(type):
+	var shuffle_tween = get_parent().pauser.get_tween(self)
+	if type == "all":
+		for r in removed_from_deck:
+			card_order.append(r)
+		removed_from_deck = []
+		shuffle_tween.tween_callback(self.shuffle_and_back)
+		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.2)
+		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.2)
+		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.2)
+		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.2)
+		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.1)
+		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.1)
+		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.1)
+		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.1)
+		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.1)
+		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.1)
+		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.1)
+		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.1)
+		shuffle_tween.tween_callback(get_parent().start_new_round.bind(true)).set_delay(0.2)
+
+func shuffle_and_back():
+	card_order.shuffle()
 	change_our_back()
 
 func change_our_back():
@@ -32,7 +68,7 @@ func draw_card(from_top,location,save_to,board_spot="na"):
 	change_our_back()
 	
 	if board_spot:
-		get_parent().cards[board_spot] = created_card
+		get_parent().map.cards[board_spot] = created_card
 	
 	return created_card
 

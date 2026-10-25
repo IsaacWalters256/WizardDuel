@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cmtuk85j7jriu"]
+[gd_scene load_steps=37 format=3 uid="uid://cmtuk85j7jriu"]
 
 [ext_resource type="Texture2D" uid="uid://djsdgf8vyo5sq" path="res://Art/UISprites/MapSize.png" id="1_m13f2"]
 [ext_resource type="Script" uid="uid://csodfgph3q02f" path="res://NC/Basic/other_main.gd" id="1_s1dh6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c30yx664cmgrg" path="res://NC/Basic/clock.tscn" id="4_e5ia1"]
 [ext_resource type="Texture2D" uid="uid://onhmjg1g3f1x" path="res://Art/UISprites/CutHand.png" id="4_feyix"]
 [ext_resource type="Texture2D" uid="uid://osat6bqmslgw" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Archer/Archer/Archer_Death.png" id="5_037rj"]
+[ext_resource type="PackedScene" uid="uid://bu6c33s77tbak" path="res://NC/Basic/current_map.tscn" id="5_bu521"]
 [ext_resource type="PackedScene" uid="uid://b8xme34hdxw4f" path="res://NC/Basic/health.tscn" id="5_sou63"]
 [ext_resource type="Texture2D" uid="uid://cqeonkj3kkoqv" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Armored Axeman/Armored Axeman/Armored Axeman_Attack01.png" id="6_sou63"]
 [ext_resource type="Texture2D" uid="uid://bj2t55u21jlil" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Armored Orc/Armored Orc/Armored Orc_Attack01.png" id="7_nvivf"]
@@ -61,36 +62,13 @@ texture = ExtResource("1_m13f2")
 [node name="MapDeck" parent="." instance=ExtResource("28_5vust")]
 position = Vector2(32, 224)
 
-[node name="SavedCards" type="Node2D" parent="."]
-
-[node name="CardSpots" type="Node2D" parent="."]
-
-[node name="Spot0" type="Node2D" parent="CardSpots"]
-position = Vector2(32, 48)
-
-[node name="Spot1" type="Node2D" parent="CardSpots"]
-position = Vector2(96, 48)
-
-[node name="Spot2" type="Node2D" parent="CardSpots"]
-position = Vector2(160, 48)
-
-[node name="Spot3" type="Node2D" parent="CardSpots"]
-position = Vector2(32, 136)
-
-[node name="Spot4" type="Node2D" parent="CardSpots"]
-position = Vector2(96, 136)
-
-[node name="Spot5" type="Node2D" parent="CardSpots"]
-position = Vector2(160, 136)
-
-[node name="HandSpot" type="Node2D" parent="CardSpots"]
-position = Vector2(96, 224)
+[node name="CurrentMap" parent="." instance=ExtResource("5_bu521")]
 
 [node name="Clock" parent="." instance=ExtResource("4_e5ia1")]
-position = Vector2(243, 42)
+position = Vector2(243, 40)
 
 [node name="Health" parent="." instance=ExtResource("5_sou63")]
-position = Vector2(222, 89)
+position = Vector2(222, 88)
 
 [node name="TextPaper1" parent="." instance=ExtResource("2_s1dh6")]
 visible = false

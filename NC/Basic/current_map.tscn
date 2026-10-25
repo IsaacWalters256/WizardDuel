@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu6c33s77tbak"]
+
+[ext_resource type="Script" uid="uid://b54ytw6fnyjma" path="res://NC/Basic/current_map.gd" id="1_7bvm3"]
+[ext_resource type="PackedScene" uid="uid://brekxgfm5i4yd" path="res://NC/Basic/death_number.tscn" id="2_2xwwa"]
+
+[node name="CardSpots" type="Node2D"]
+script = ExtResource("1_7bvm3")
+
+[node name="Spot0" type="Node2D" parent="."]
+position = Vector2(32, 48)
+
+[node name="Spot1" type="Node2D" parent="."]
+position = Vector2(96, 48)
+
+[node name="Spot2" type="Node2D" parent="."]
+position = Vector2(160, 48)
+
+[node name="Spot3" type="Node2D" parent="."]
+position = Vector2(32, 136)
+
+[node name="Spot4" type="Node2D" parent="."]
+position = Vector2(96, 136)
+
+[node name="Spot5" type="Node2D" parent="."]
+position = Vector2(160, 136)
+
+[node name="HandSpot" type="Node2D" parent="."]
+position = Vector2(96, 224)
+
+[node name="CardDamagers" type="Node2D" parent="."]
+position = Vector2(0, 88)
+
+[node name="Left" parent="CardDamagers" instance=ExtResource("2_2xwwa")]
+position = Vector2(32, 0)
+bottom_card_id = "Card3"
+
+[node name="Mid" parent="CardDamagers" instance=ExtResource("2_2xwwa")]
+position = Vector2(96, 0)
+top_card_id = "Card1"
+
+[node name="Right" parent="CardDamagers" instance=ExtResource("2_2xwwa")]
+position = Vector2(160, 0)
+top_card_id = "Card2"
+bottom_card_id = "Card5"
