@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://7k8s1aepxmc"]
+
+[ext_resource type="Script" uid="uid://b8qj1y6gwlxi" path="res://NC/Basic/room.gd" id="1_5gj7p"]
+[ext_resource type="PackedScene" uid="uid://bo8boot1cu610" path="res://NC/Basic/hot_spots.tscn" id="2_qarog"]
+
+[node name="Room" type="Node2D"]
+script = ExtResource("1_5gj7p")
+
+[node name="HotSpots" parent="." instance=ExtResource("2_qarog")]
