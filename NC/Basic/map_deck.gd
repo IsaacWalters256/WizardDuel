@@ -9,7 +9,14 @@ var locked = false
 @export var save_cards_to = Node2D
 @export var draw_to = Node2D
 
+var what_is = "map_deck"
 
+
+func end():
+	card_order = []
+	removed_from_deck = []
+	locked = false
+	get_parent().pauser.get_tween(self).kill()
 
 func start():
 	create_deck()
@@ -43,7 +50,7 @@ func reshuffle(type):
 		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.1)
 		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.1)
 		shuffle_tween.tween_callback(self.shuffle_and_back).set_delay(0.1)
-		shuffle_tween.tween_callback(get_parent().start_new_round.bind(true)).set_delay(0.2)
+		shuffle_tween.tween_callback(get_parent().ucp.bind("start_new_round")).set_delay(0.2)
 
 func shuffle_and_back():
 	card_order.shuffle()

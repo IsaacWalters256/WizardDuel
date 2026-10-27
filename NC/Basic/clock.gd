@@ -4,7 +4,12 @@ func start():
 	get_node("OrbEnergy").max_value = current_max
 
 var timer
-var current_max = 10
+var current_max = 300
+
+func end():
+	get_node("OrbEnergy").value = current_max
+	timer = get_parent().pauser.get_tween(self)
+	timer.kill()
 
 func time(play):
 	if play == true:

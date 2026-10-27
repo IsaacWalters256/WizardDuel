@@ -33,7 +33,13 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("select"):
 		if current_selected == "map_card":
 			get_parent().enter_card(current_selected_ref.get_parent())
+			change_icon("default")
 		#check if status is locked again on click
+		elif current_selected == "map_deck":
+			get_parent().ucp("start_game")
+		elif current_selected == "room_edge":
+			change_icon("default")
+			get_parent().exit_room()
 	elif Input.is_action_just_pressed("look"):
 		print("look")
 
@@ -43,12 +49,23 @@ func _process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	var what_is = area.get_parent().what_is
 	if what_is == "map_card":
-		if area.get_parent().status == "unlocked":
+		if area.get_parent().face_down == false && area.get_parent().get_parent().get_parent().is_in_room == false:
 			current_selected_ref = area
 			change_icon("look")
 			current_selected = "map_card"
+	elif what_is == "map_deck":
+		current_selected_ref = area
+		change_icon("select")
+		current_selected = "map_deck"
+		get_node("HoverLabel").visible = true
+		get_node("HoverLabel").text = "new game"
+	elif what_is == "room_edge":
+		current_selected_ref = area
+		change_icon("look")
+		current_selected = "room_edge"
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area == current_selected_ref:
 		current_selected = "none"
 		change_icon("default")
+		get_node("HoverLabel").visible = false

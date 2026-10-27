@@ -6,6 +6,10 @@ var mega_tween = {
 	
 }
 
+func end():
+	for mt in mega_tween:
+		mega_tween[mt].kill()
+		mega_tween.erase(mt)
 
 func get_tween(node_creating,index=0):
 	var id = str(node_creating) + str(index)

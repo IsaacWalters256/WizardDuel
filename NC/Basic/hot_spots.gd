@@ -2,6 +2,7 @@ extends Node2D
 
 var left_to_right = ["Lef","LTh","Mid","RTh","Rig"]
 var up_to_down = ["Top","Mid","Bot"]
+var what_is = "hot_spot"
 
 var hot_spots_to_activate = {
 	"1": ["MidMid"],

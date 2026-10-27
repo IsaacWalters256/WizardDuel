@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cmtuk85j7jriu"]
+[gd_scene load_steps=18 format=3 uid="uid://cmtuk85j7jriu"]
 
 [ext_resource type="Texture2D" uid="uid://djsdgf8vyo5sq" path="res://Art/UISprites/MapSize.png" id="1_m13f2"]
 [ext_resource type="Script" uid="uid://csodfgph3q02f" path="res://NC/Basic/other_main.gd" id="1_s1dh6"]
@@ -8,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://c30yx664cmgrg" path="res://NC/Basic/clock.tscn" id="4_e5ia1"]
 [ext_resource type="PackedScene" uid="uid://bu6c33s77tbak" path="res://NC/Basic/current_map.tscn" id="5_bu521"]
 [ext_resource type="PackedScene" uid="uid://b8xme34hdxw4f" path="res://NC/Basic/health.tscn" id="5_sou63"]
+[ext_resource type="Texture2D" uid="uid://dfsetobb5aouo" path="res://Art/UISprites/CardsOrderChanged.png" id="12_d4046"]
 [ext_resource type="PackedScene" uid="uid://rwypjrwlawly" path="res://NC/Basic/holding_hand.tscn" id="14_m4k86"]
+[ext_resource type="PackedScene" uid="uid://7k8s1aepxmc" path="res://NC/Basic/room.tscn" id="15_d4046"]
 [ext_resource type="PackedScene" uid="uid://bm8u55pt0j3ye" path="res://NC/Basic/map_deck.tscn" id="28_5vust"]
-[ext_resource type="Texture2D" uid="uid://sykxoonmjq1u" path="res://Art/UISprites/RoomSize1.png" id="31_feyix"]
 [ext_resource type="Texture2D" uid="uid://do1qjx8u8hctf" path="res://Art/UISprites/Franuka/1x/Dividers/Divider_07.png" id="32_037rj"]
 [ext_resource type="PackedScene" uid="uid://bo8w1c5c0carg" path="res://NC/Basic/mouse_hit.tscn" id="35_bu521"]
 [ext_resource type="PackedScene" uid="uid://dpx233wphb1xr" path="res://NC/Basic/pockets.tscn" id="35_r3ew1"]
@@ -65,11 +66,40 @@ visible = false
 tile_set = SubResource("TileSet_nin8b")
 layer_0/tile_data = PackedInt32Array(786433, 65536, 0, 786434, 65536, 0, 786435, 65536, 0, 786436, 65536, 0, 786437, 65536, 0, 786438, 65536, 0, 786439, 65536, 0, 786440, 131072, 0, 851976, 131072, 1, 917512, 131072, 1, 983048, 131072, 1, 1048584, 131072, 1, 1179656, 131072, 2, 1114120, 131072, 1, 1179655, 65536, 2, 1179654, 65536, 2, 1179653, 65536, 2, 1179652, 65536, 2, 1179651, 65536, 2, 1179650, 65536, 2, 1179649, 65536, 2, 786432, 0, 0, 851968, 0, 1, 917504, 0, 1, 983040, 0, 1, 1048576, 0, 1, 1114112, 0, 1, 1179648, 0, 2, 1114113, 65536, 1, 1114114, 65536, 1, 1114115, 65536, 1, 1114116, 65536, 1, 1114117, 65536, 1, 1114118, 65536, 1, 1114119, 65536, 1, 1048583, 65536, 1, 983047, 65536, 1, 917511, 65536, 1, 851975, 65536, 1, 851974, 65536, 1, 851973, 65536, 1, 851972, 65536, 1, 851971, 65536, 1, 851970, 65536, 1, 851969, 65536, 1, 917505, 65536, 1, 983041, 65536, 1, 1048577, 65536, 1, 1048578, 65536, 1, 1048579, 65536, 1, 1048580, 65536, 1, 1048581, 65536, 1, 983045, 65536, 1, 983046, 65536, 1, 917510, 65536, 1, 1048582, 65536, 1, 917509, 65536, 1, 917508, 65536, 1, 917507, 65536, 1, 917506, 65536, 1, 983042, 65536, 1, 983043, 65536, 1, 983044, 65536, 1)
 
-[node name="RoomSize1" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(123, 92)
-texture = ExtResource("31_feyix")
+[node name="CardCover" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+position = Vector2(-81, 88)
+texture = ExtResource("12_d4046")
+hframes = 15
+vframes = 6
 
-[node name="MouseHit" parent="." instance=ExtResource("35_bu521")]
+[node name="RoomPostionRef" type="Node2D" parent="."]
+position = Vector2(123, 92)
+
+[node name="Room0" parent="." instance=ExtResource("15_d4046")]
+position = Vector2(2, -158)
+
+[node name="Room1" parent="." instance=ExtResource("15_d4046")]
+position = Vector2(268, -159)
+
+[node name="Room2" parent="." instance=ExtResource("15_d4046")]
+position = Vector2(534, -157)
+
+[node name="Room3" parent="." instance=ExtResource("15_d4046")]
+position = Vector2(2, -59)
+
+[node name="Room4" parent="." instance=ExtResource("15_d4046")]
+position = Vector2(266, -60)
+
+[node name="Room5" parent="." instance=ExtResource("15_d4046")]
+position = Vector2(532, -61)
+
+[node name="Room6" parent="." instance=ExtResource("15_d4046")]
+position = Vector2(798, -105)
 
 [node name="HoldingHand" parent="." instance=ExtResource("14_m4k86")]
+z_index = 3
+
+[node name="MouseHit" parent="." instance=ExtResource("35_bu521")]
+z_index = 6

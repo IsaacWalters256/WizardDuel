@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdxmup10w1b72"]
+[gd_scene load_steps=4 format=3 uid="uid://bdxmup10w1b72"]
 
 [ext_resource type="PackedScene" uid="uid://cmtuk85j7jriu" path="res://NC/Basic/other_main.tscn" id="1_2ck8v"]
 [ext_resource type="PackedScene" uid="uid://b1ddgod4j4xge" path="res://NC/Basic/pauser.tscn" id="2_jmn24"]
-[ext_resource type="PackedScene" uid="uid://rd2nx4s1bpwp" path="res://NC/Basic/input_taker.tscn" id="3_6wx3m"]
 [ext_resource type="PackedScene" uid="uid://dfrsxt3nqgkfc" path="res://NC/Basic/mouse_follow.tscn" id="4_745nd"]
 
 [node name="Master" type="Node2D"]
@@ -11,7 +10,5 @@
 
 [node name="Pauser" parent="." instance=ExtResource("2_jmn24")]
 position = Vector2(208, 22)
-
-[node name="InputTaker" parent="." instance=ExtResource("3_6wx3m")]
 
 [node name="MouseFollow" parent="." instance=ExtResource("4_745nd")]

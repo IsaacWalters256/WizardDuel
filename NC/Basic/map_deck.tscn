@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm8u55pt0j3ye"]
+[gd_scene load_steps=5 format=3 uid="uid://bm8u55pt0j3ye"]
 
 [ext_resource type="Script" uid="uid://bewd40egtcede" path="res://NC/Basic/map_deck.gd" id="1_k13ll"]
 [ext_resource type="Texture2D" uid="uid://dv17hx2rnedye" path="res://Art/UISprites/1by1.png" id="2_bmmhk"]
 [ext_resource type="Texture2D" uid="uid://dfsetobb5aouo" path="res://Art/UISprites/CardsOrderChanged.png" id="3_bmmhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmmhk"]
+size = Vector2(54, 78)
 
 [node name="MapDeck" type="Node2D"]
 script = ExtResource("1_k13ll")
@@ -24,6 +27,11 @@ offset_left = -30.0
 offset_top = -42.0
 offset_right = 30.0
 offset_bottom = 42.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_bmmhk")
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
