@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3l4ijckxuggy"]
+
+[ext_resource type="Script" uid="uid://bru3uvtlfhd7q" path="res://NC/Units/swordsman.gd" id="1_27ip5"]
+[ext_resource type="Texture2D" uid="uid://crwm0dtvfp34d" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Swordsman/Swordsman with shadows/Swordsman.png" id="1_ggkdm"]
+
+[node name="Swordsman" type="Sprite2D"]
+texture = ExtResource("1_ggkdm")
+hframes = 15
+vframes = 7
+script = ExtResource("1_27ip5")

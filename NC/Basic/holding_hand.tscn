@@ -1,27 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://rwypjrwlawly"]
+[gd_scene load_steps=4 format=3 uid="uid://rwypjrwlawly"]
 
 [ext_resource type="Texture2D" uid="uid://onhmjg1g3f1x" path="res://Art/UISprites/CutHand.png" id="1_ucvyv"]
-[ext_resource type="Texture2D" uid="uid://osat6bqmslgw" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Archer/Archer/Archer_Death.png" id="2_diqq7"]
-[ext_resource type="Texture2D" uid="uid://cqeonkj3kkoqv" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Armored Axeman/Armored Axeman/Armored Axeman_Attack01.png" id="3_ayb07"]
-[ext_resource type="Texture2D" uid="uid://bj2t55u21jlil" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Armored Orc/Armored Orc/Armored Orc_Attack01.png" id="4_abngd"]
+[ext_resource type="PackedScene" uid="uid://b0b28lo3oqwo2" path="res://NC/Basic/inventory_spot.tscn" id="2_cr5g0"]
+[ext_resource type="Script" uid="uid://cql16imt2f8es" path="res://NC/Basic/holding_hand.gd" id="2_oxjnf"]
 
-[node name="HoldingHand" type="Node2D"]
-
-[node name="CutHand" type="Sprite2D" parent="."]
-position = Vector2(144, 173)
+[node name="HoldingHand" type="Sprite2D"]
 texture = ExtResource("1_ucvyv")
+script = ExtResource("2_oxjnf")
 
-[node name="ArcherDeath" type="Sprite2D" parent="."]
-position = Vector2(193, 196)
-texture = ExtResource("2_diqq7")
-hframes = 4
+[node name="InventorySpot0" parent="." instance=ExtResource("2_cr5g0")]
+position = Vector2(81, 9)
 
-[node name="ArmoredAxemanAttack01" type="Sprite2D" parent="."]
-position = Vector2(174, 194)
-texture = ExtResource("3_ayb07")
-hframes = 9
+[node name="InventorySpot1" parent="." instance=ExtResource("2_cr5g0")]
+position = Vector2(69, 24)
 
-[node name="ArmoredOrcAttack01" type="Sprite2D" parent="."]
-position = Vector2(155, 206)
-texture = ExtResource("4_abngd")
-hframes = 7
+[node name="InventorySpot2" parent="." instance=ExtResource("2_cr5g0")]
+position = Vector2(39, 10)
+
+[node name="InventorySpot3" parent="." instance=ExtResource("2_cr5g0")]
+position = Vector2(22, 15)
+
+[node name="InventorySpot4" parent="." instance=ExtResource("2_cr5g0")]
+position = Vector2(3, 24)
+
+[node name="InventorySpot5" parent="." instance=ExtResource("2_cr5g0")]
+position = Vector2(39, 31)
+
+[node name="InventorySpot6" parent="." instance=ExtResource("2_cr5g0")]
+position = Vector2(17, 41)
+
+[node name="InventorySpot7" parent="." instance=ExtResource("2_cr5g0")]
+position = Vector2(38, 51)

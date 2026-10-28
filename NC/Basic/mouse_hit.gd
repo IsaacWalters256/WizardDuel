@@ -2,6 +2,7 @@ extends Node2D
 
 var current_selected = "none"
 var current_selected_ref = self
+var holding = null
 #seperate by underscore friendly_unit_lancer
 #choice_lancer
 
@@ -40,10 +41,28 @@ func _process(delta: float) -> void:
 		elif current_selected == "room_edge":
 			change_icon("default")
 			get_parent().exit_room()
+		elif current_selected == "friendly_unit":
+			add_holding(true,current_selected_ref.get_parent())
+			change_icon("default")
+		elif current_selected == "can_place_unit_here":
+			current_selected_ref.get_parent().add_holding(true,holding)
+			change_icon("default")
+		current_selected = "none"
 	elif Input.is_action_just_pressed("look"):
 		print("look")
 
-
+func add_holding(adding,thing=null):
+	if adding:
+		if thing.get_parent():
+			thing.reparent(get_node("Held"))
+			thing.held_by.add_holding(false)
+		else:
+			get_node("Held").add_child(thing)
+		thing.held_by = self
+		holding = thing
+	else:
+		#get_node("Held").remove_child(holding)
+		holding = null
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -63,6 +82,14 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		current_selected_ref = area
 		change_icon("look")
 		current_selected = "room_edge"
+	elif what_is == "unit" && area.get_parent().team == 0 && holding != current_selected_ref.get_parent():
+		current_selected_ref = area
+		change_icon("select")
+		current_selected = "friendly_unit"
+	elif what_is == "inventory_spot" && !area.get_parent().locked && holding && holding.what_is == "unit" && area.get_parent().what_to_hold == "unit":
+		current_selected_ref = area
+		change_icon("select")
+		current_selected = "can_place_unit_here"
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area == current_selected_ref:

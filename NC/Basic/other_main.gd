@@ -6,6 +6,8 @@ extends Node2D
 @onready var deck = get_node("MapDeck")
 @onready var health = get_node("Health")
 @onready var clock = get_node("Clock")
+@onready var unit_maker = get_node("UnitMaker")
+@onready var holding_hand = get_node("HoldingHand")
 #var input_locked = true
 
 var room_replace_position = [get_node("Room0"),Vector2(0,0)]
@@ -41,6 +43,7 @@ func start_new_game():#mess with passing save data here eventually
 	deck.create_deck()
 	health.reset_health()
 	map.start(deck)
+	holding_hand.new_starting_group()
 	
 	ucp("shuffle_deck")
 
@@ -85,7 +88,7 @@ func enter_card(which):
 	room_trans.tween_property(get_node("CardCover"), "position", get_node("RoomPostionRef").position, 1.0)
 	room_trans.parallel().tween_property(get_node("CardCover"), "scale", Vector2(3,3), 1.0)
 	room_trans.parallel().tween_property(get_node("CardCover"), "rotation", deg_to_rad(90), 1.0)
-	room_trans.tween_property(which.room, "position", get_node("RoomPostionRef").position, 0.1)
+	#room_trans.tween_property(which.room, "position", get_node("RoomPostionRef").position, 0.1)
 	room_trans.tween_callback(which.room.squish)
 	room_trans.tween_property(get_node("CardCover"), "scale", Vector2(1.5,3), 1.0)
 	room_trans.tween_property(get_node("CardCover"), "modulate", Color(1,1,1,0), 0.5)

@@ -5,6 +5,7 @@ var up_to_down = ["Top","Mid","Bot"]
 var what_is = "hot_spot"
 
 var hot_spots_to_activate = {
+	"0": ["MidMid"],
 	"1": ["MidMid"],
 	"2":["LefMid","RigMid"],
 	"3":["LefMid","MidMid","RigMid"],
@@ -21,3 +22,15 @@ var hot_spots_to_activate = {
 }
 
 #movement will be looking at the node name you're on, splitting characters three and three, and if you are mid mid, for left right you look at the first one and its mid so the closest are lth or rth, check the mids on those and if turned on thats where we can move if not it checks lef and rig
+
+func load_new(type):
+	for c in get_children():
+		c.locked = true
+		c.visible = false
+		c.ally_spot.locked = true
+		c.enemy_spot.locked = true
+	for c in hot_spots_to_activate[str(type)]:
+		get_node(c).locked = false
+		get_node(c).visible = true
+		get_node(c).ally_spot.locked = false
+		get_node(c).enemy_spot.locked = false
