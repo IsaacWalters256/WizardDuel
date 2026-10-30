@@ -1,9 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpx233wphb1xr"]
+[gd_scene load_steps=6 format=3 uid="uid://dpx233wphb1xr"]
 
+[ext_resource type="Script" uid="uid://uhvqal3sweuw" path="res://NC/Basic/bag.gd" id="1_45c3n"]
 [ext_resource type="Texture2D" uid="uid://ba027qtvggkcv" path="res://Art/UISprites/potions-Sheet.png" id="1_vota3"]
+[ext_resource type="Texture2D" uid="uid://2w0apxgkmixk" path="res://Art/UISprites/Franuka/1x/Spellbook & Tabs/Spellbook.png" id="2_cgl6e"]
+[ext_resource type="PackedScene" uid="uid://s0vbv0epjv8d" path="res://NC/Basic/playing_field.tscn" id="3_45c3n"]
 
-[node name="Pockets" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lfbb"]
+size = Vector2(199.5, 111)
+
+[node name="Bag" type="Node2D"]
+script = ExtResource("1_45c3n")
 
 [node name="Potions-sheet" type="Sprite2D" parent="."]
 position = Vector2(233, 73)
 texture = ExtResource("1_vota3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(124, 78)
+texture = ExtResource("2_cgl6e")
+
+[node name="PlayingField" parent="." instance=ExtResource("3_45c3n")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayingField"]
+position = Vector2(123.25, 66.5)
+shape = SubResource("RectangleShape2D_2lfbb")

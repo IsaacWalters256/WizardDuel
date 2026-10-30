@@ -1,38 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://7k8s1aepxmc"]
+[gd_scene load_steps=4 format=3 uid="uid://7k8s1aepxmc"]
 
 [ext_resource type="Script" uid="uid://b8qj1y6gwlxi" path="res://NC/Basic/room.gd" id="1_5gj7p"]
-[ext_resource type="PackedScene" uid="uid://bo8boot1cu610" path="res://NC/Basic/hot_spots.tscn" id="2_qarog"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gj7p"]
-size = Vector2(10, 80)
+[ext_resource type="PackedScene" uid="uid://s0vbv0epjv8d" path="res://NC/Basic/playing_field.tscn" id="2_5gj7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qarog"]
-size = Vector2(240, 10)
+size = Vector2(230, 70)
 
 [node name="Room" type="Node2D"]
 script = ExtResource("1_5gj7p")
 
-[node name="HotSpots" parent="." instance=ExtResource("2_qarog")]
+[node name="PlayingField" parent="." instance=ExtResource("2_5gj7p")]
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(120, 0)
-shape = SubResource("RectangleShape2D_5gj7p")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-120, 0)
-shape = SubResource("RectangleShape2D_5gj7p")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -40)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayingField"]
 shape = SubResource("RectangleShape2D_qarog")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 40)
-shape = SubResource("RectangleShape2D_qarog")
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://03aseahwfiag"]
+[gd_scene load_steps=16 format=3 uid="uid://03aseahwfiag"]
 
+[ext_resource type="Script" uid="uid://c8cwcfrlg7su7" path="res://NC/Basic/book.gd" id="1_ldpwt"]
 [ext_resource type="Texture2D" uid="uid://cdleph3kwah2l" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Armor.png" id="1_tafot"]
 [ext_resource type="Texture2D" uid="uid://b6kt77vqgpuf6" path="res://Art/UISprites/Franuka/SpellbookFullSprite.png" id="1_y8ban"]
 [ext_resource type="Texture2D" uid="uid://jd0wrngweds" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Consumable.png" id="2_y8ban"]
@@ -12,8 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://dfdepa0o1igru" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Ring.png" id="9_vwnte"]
 [ext_resource type="Texture2D" uid="uid://5javf78uvha3" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Shield.png" id="10_pd4kd"]
 [ext_resource type="Texture2D" uid="uid://2mjil8u4l2hf" path="res://Art/UISprites/Franuka/1x/Item slots/Slot_01_Weapon.png" id="11_5l4yn"]
+[ext_resource type="PackedScene" uid="uid://s0vbv0epjv8d" path="res://NC/Basic/playing_field.tscn" id="14_fj0v8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5s2f1"]
+size = Vector2(206, 118)
 
 [node name="Book" type="Node2D"]
+script = ExtResource("1_ldpwt")
 
 [node name="SpellbookFullSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_y8ban")
@@ -63,3 +69,9 @@ texture = ExtResource("10_pd4kd")
 [node name="Slot01Weapon" type="Sprite2D" parent="."]
 position = Vector2(-47, 32)
 texture = ExtResource("11_5l4yn")
+
+[node name="PlayingField" parent="." instance=ExtResource("14_fj0v8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayingField"]
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_5s2f1")

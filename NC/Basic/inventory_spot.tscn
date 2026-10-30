@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0b28lo3oqwo2"]
+[gd_scene load_steps=4 format=3 uid="uid://b0b28lo3oqwo2"]
 
 [ext_resource type="Script" uid="uid://duvtwtwscq5aa" path="res://NC/Basic/inventory_spot.gd" id="1_ohxsg"]
+[ext_resource type="PackedScene" uid="uid://jx76p1w3rhg1" path="res://NC/Basic/held_object.tscn" id="2_aligq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c04ni"]
 
@@ -12,4 +13,4 @@ script = ExtResource("1_ohxsg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_c04ni")
 
-[node name="Held" type="Node2D" parent="."]
+[node name="HeldObject" parent="." instance=ExtResource("2_aligq")]

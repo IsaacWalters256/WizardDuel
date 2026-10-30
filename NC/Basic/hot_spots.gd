@@ -27,10 +27,8 @@ func load_new(type):
 	for c in get_children():
 		c.locked = true
 		c.visible = false
-		c.ally_spot.locked = true
-		c.enemy_spot.locked = true
+		c.battle_spot.locked = true
 	for c in hot_spots_to_activate[str(type)]:
 		get_node(c).locked = false
 		get_node(c).visible = true
-		get_node(c).ally_spot.locked = false
-		get_node(c).enemy_spot.locked = false
+		get_node(c).battle_spot.locked = false

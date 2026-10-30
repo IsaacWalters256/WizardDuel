@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bo8w1c5c0carg"]
+[gd_scene load_steps=7 format=3 uid="uid://bo8w1c5c0carg"]
 
 [ext_resource type="Script" uid="uid://bwiamsajeonvl" path="res://NC/Basic/mouse_hit.gd" id="1_vmvo2"]
 [ext_resource type="Texture2D" uid="uid://c5y56xccw75a2" path="res://Art/UISprites/Franuka/1x/Cursors/Gauntlet.png" id="2_alk6g"]
 [ext_resource type="FontFile" uid="uid://cwf87upm5smwu" path="res://Art/UISprites/Franuka/Fonts/FantasyRPGtext (size 12).ttf" id="3_d0nws"]
 [ext_resource type="Texture2D" uid="uid://onhmjg1g3f1x" path="res://Art/UISprites/CutHand.png" id="4_akt1y"]
+[ext_resource type="PackedScene" uid="uid://jx76p1w3rhg1" path="res://NC/Basic/held_object.tscn" id="5_3kk3c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dja10"]
 size = Vector2(2, 2)
@@ -17,8 +18,7 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_dja10")
 
-[node name="Held" type="Node2D" parent="."]
-position = Vector2(4, 1)
+[node name="HeldObject" parent="." instance=ExtResource("5_3kk3c")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2, -2)

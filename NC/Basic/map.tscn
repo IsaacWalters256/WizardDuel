@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://df7y5qb8j8e7h"]
+
+[ext_resource type="Script" uid="uid://omaggn53trvs" path="res://NC/Basic/map.gd" id="1_rxg0u"]
+[ext_resource type="Texture2D" uid="uid://dfsetobb5aouo" path="res://Art/UISprites/CardsOrderChanged.png" id="2_yldfb"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_rxg0u")
+
+[node name="Rotation" type="Node2D" parent="."]
+
+[node name="CardCover" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+position = Vector2(-106, 85)
+texture = ExtResource("2_yldfb")
+hframes = 15
+vframes = 6

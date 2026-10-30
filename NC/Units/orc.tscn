@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://emc0klr5lga5"]
+
+[ext_resource type="Texture2D" uid="uid://do4hnn0oa57xr" path="res://Art/Tiny RPG 1/Characters(100x100 split)/Orc/Orc with shadows/Orc.png" id="1_jpl27"]
+[ext_resource type="Script" uid="uid://bfutbcxvwbppx" path="res://NC/Units/orc.gd" id="2_1irlt"]
+
+[node name="Orc" type="Sprite2D"]
+texture = ExtResource("1_jpl27")
+flip_h = true
+hframes = 8
+vframes = 6
+script = ExtResource("2_1irlt")

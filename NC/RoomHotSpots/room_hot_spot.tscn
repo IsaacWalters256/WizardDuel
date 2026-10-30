@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cv5na1kp6sv8i" path="res://NC/RoomHotSpots/room_hot_spot.gd" id="1_s0uc0"]
 [ext_resource type="Texture2D" uid="uid://bsex8svbh2bgf" path="res://Art/UISprites/BattleInteraction.png" id="1_sx0w5"]
-[ext_resource type="PackedScene" uid="uid://b0b28lo3oqwo2" path="res://NC/Basic/inventory_spot.tscn" id="3_t5fjl"]
+[ext_resource type="PackedScene" uid="uid://cpxcj48r5dnok" path="res://NC/Basic/battle_spot.tscn" id="3_t5fjl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s0uc0"]
 size = Vector2(28, 13)
@@ -20,8 +20,6 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_s0uc0")
+disabled = true
 
-[node name="InventorySpotAlly" parent="." instance=ExtResource("3_t5fjl")]
-
-[node name="InventorySpotEnemy" parent="." instance=ExtResource("3_t5fjl")]
-what_to_hold = "enemy"
+[node name="BattleSpot" parent="." instance=ExtResource("3_t5fjl")]

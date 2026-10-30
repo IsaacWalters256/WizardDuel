@@ -2,6 +2,7 @@ extends Node2D
 
 func start():
 	get_node("OrbEnergy").max_value = current_max
+	get_node("OrbEnergy").value = current_max
 
 var timer
 var current_max = 300

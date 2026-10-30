@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpxcj48r5dnok"]
+
+[ext_resource type="Script" uid="uid://yia252xqenud" path="res://NC/Basic/battle_spot.gd" id="1_xqvkf"]
+[ext_resource type="PackedScene" uid="uid://jx76p1w3rhg1" path="res://NC/Basic/held_object.tscn" id="2_2kr7r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vv752"]
+
+[node name="BattleSpot" type="Node2D"]
+script = ExtResource("1_xqvkf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vv752")
+
+[node name="HeldAlly" parent="." instance=ExtResource("2_2kr7r")]
+position = Vector2(-8, -10)
+change_to_pos = Vector2(0, 0)
+
+[node name="HeldEnemy" parent="." instance=ExtResource("2_2kr7r")]
+position = Vector2(10, -6)
+change_to_pos = Vector2(0, 0)

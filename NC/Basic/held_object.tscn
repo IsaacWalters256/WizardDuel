@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://jx76p1w3rhg1"]
+
+[ext_resource type="Script" uid="uid://dafbkdy1hpkce" path="res://NC/Basic/held_object.gd" id="1_f555c"]
+
+[node name="HeldObject" type="Node2D"]
+script = ExtResource("1_f555c")
