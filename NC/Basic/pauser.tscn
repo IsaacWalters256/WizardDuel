@@ -7,8 +7,10 @@
 script = ExtResource("1_5351g")
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_right = 38.0
-offset_bottom = 37.0
+offset_left = -19.0
+offset_top = -18.0
+offset_right = 19.0
+offset_bottom = 19.0
 
 [node name="1By1" type="Sprite2D" parent="."]
 visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgqd8oufvbngq"]
+[gd_scene load_steps=4 format=3 uid="uid://bweq48tovw4dn"]
 
 [ext_resource type="Texture2D" uid="uid://cacrv16l74bak" path="res://Art/UISprites/Franuka/1x/Spellbook & Tabs/PageFold_Left.png" id="1_jjb6e"]
 [ext_resource type="Script" uid="uid://0rjsb3qwjg3q" path="res://NC/Basic/summon_map.gd" id="2_qdwsa"]

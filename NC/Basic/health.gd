@@ -3,6 +3,11 @@ extends Node2D
 var current_hp = 0
 @onready var hp = get_node("OrbEnergy")
 
+var main
+
+func start(main_ref):
+	main = main_ref
+
 func reset_health():
 	change_hp(72,5)
 	#hp_tween.parallel().tween_property(current_hp, "value", 72, 5)

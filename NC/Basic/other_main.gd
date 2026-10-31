@@ -2,63 +2,67 @@ extends Node2D
 
 @onready var pauser = get_parent().get_node("Pauser")
 
-@onready var map = get_node("CurrentMap")
-@onready var deck = get_node("MapDeck")
 @onready var health = get_node("Health")
 @onready var clock = get_node("Clock")
 @onready var unit_maker = get_node("UnitMaker")
 @onready var holding_hand = get_node("HoldingHand")
-#var input_locked = true
+@onready var map = get_node("Map")
+@onready var bag = get_node("Bag")
+@onready var moving_hand = get_node("MovingHand")
+@onready var current_rooms = get_node("CurrentRooms")
+@onready var mouse_hit = get_node("MouseHit")
+@onready var map_summon = get_node("SummonMap")
+var hour = 0
+var day = 0 #have this instead of difficulty?
 
-var room_replace_position = [get_node("Room0"),Vector2(0,0)]
-
-var difficulty = 0
-
+#pass in how many days they want the week to be 
 func start():
-	get_node("MouseHit").start()
-	ucp("start_game")
-#TODO instead of starting it like this, start it with the book and they press a new game button or a save button or something and the book moves down to its spot and everything initializes and the deck spits out its cards
-
-func ucp(which):#unified command pump
-	if which == "start_game":
-		reset_all()
-		start_new_game()
-	elif which == "new_round":
-		start_new_round()
-	elif which == "shuffle_deck":
-		shuffle_deck()
-	elif which == "start_new_round":
-		start_new_round()
-
-
-
-func reset_all():
-	pauser.end()
-	clock.end()
-	deck.end()
-	map.end()
-
-func start_new_game():#mess with passing save data here eventually
-	clock.start()
-	deck.create_deck()
-	health.reset_health()
-	map.start(deck)
-	holding_hand.new_starting_group()
+	health.start(self)
+	clock.start(self)
+	unit_maker.start(self,pauser)
+	holding_hand.start(self,pauser)
+	map.start(self,pauser)
+	bag.start(self,pauser)
+	moving_hand.start(self,pauser)
+	current_rooms.start(self,pauser)
+	mouse_hit.start(self,pauser)
 	
-	ucp("shuffle_deck")
+	next_stage("start_week")
 
-func shuffle_deck():
-	deck.reshuffle("all")
 
-func start_new_round():
-	map.reset_board()
-	clock.reset_time()
+func next_stage(which):
+	if which == "start_week":#new game basically
+		health.reset_health()
+		holding_hand.new_starting_group()
+		next_stage("prepare_start_day")
+	elif which == "prepare_start_day":
+		clock.reset_time()
+	elif which == "start_day":
+		clock.time()
+		map.new_day()
+		hour = 0
+	elif which == "next_hour":
+		pass#shuffle_deck()
+		hour = hour + 1
+	elif which == "end_day_lockout":
+		pass
+	elif which == "end_day":
+		pass
+	elif which == "end_week":
+		pass
+	#boss fight?
 
-func new_round_or_new_game():
-	if health.hp.value > 0:
-		start_new_round()
-	else:
-		lost_game()
+
+
+#func shuffle_deck():
+	#deck.reshuffle("all")
+
+
+#func new_round_or_new_game():
+	#if health.hp.value > 0:
+		#start_new_round()
+	#else:
+		#lost_game()
 
 func game_board_ready():
 	clock.time(true)
@@ -80,7 +84,7 @@ func lost_game():
 func exit_room():
 	map.is_in_room = false
 	map.visible = true
-	room_replace_position[0].position = room_replace_position[1]
+	#room_replace_position[0].position = room_replace_position[1]
 	#for c in get_node("CurrentMap").cards:
 	#	if !get_node("CurrentMap").cards[c].face_down:#doesnt account for damage currently being delt
 			

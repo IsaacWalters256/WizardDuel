@@ -1,8 +1,12 @@
 extends Node2D
 
 
-func start():#currently not triggering
-	pass
+var main
+var pauser
+
+func start(main_ref,pauser_ref):
+	main = main_ref
+	pauser = pauser_ref
 
 
 func create_unit(type):

@@ -9,9 +9,9 @@
 script = ExtResource("1_liklv")
 
 [node name="OrbEnergy" type="TextureProgressBar" parent="."]
-offset_left = -40.0
+offset_left = -24.0
 offset_top = -24.0
-offset_right = 8.0
+offset_right = 24.0
 offset_bottom = 24.0
 value = 100.0
 fill_mode = 4
@@ -19,4 +19,5 @@ texture_under = ExtResource("2_kr861")
 texture_progress = ExtResource("3_kr861")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 0)
 texture = ExtResource("1_kl221")

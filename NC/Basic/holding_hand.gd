@@ -1,6 +1,13 @@
 extends Sprite2D
 
 var what_is = "hand"
+var main
+var pauser
+
+func start(main_ref,pauser_ref):
+	main = main_ref
+	pauser = pauser_ref
+
 
 func new_starting_group():
 	get_node("InventorySpot0").held.add_holding(true,get_parent().unit_maker.create_unit("Swordsman"))

@@ -1,17 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmtuk85j7jriu"]
+[gd_scene load_steps=15 format=3 uid="uid://cmtuk85j7jriu"]
 
 [ext_resource type="Texture2D" uid="uid://djsdgf8vyo5sq" path="res://Art/UISprites/MapSize.png" id="1_m13f2"]
 [ext_resource type="Script" uid="uid://csodfgph3q02f" path="res://NC/Basic/other_main.gd" id="1_s1dh6"]
 [ext_resource type="PackedScene" uid="uid://03aseahwfiag" path="res://NC/Basic/book.tscn" id="3_8tocs"]
 [ext_resource type="PackedScene" uid="uid://c30yx664cmgrg" path="res://NC/Basic/clock.tscn" id="4_e5ia1"]
 [ext_resource type="PackedScene" uid="uid://b8xme34hdxw4f" path="res://NC/Basic/health.tscn" id="5_sou63"]
-[ext_resource type="PackedScene" uid="uid://bsctui80gg3lw" path="res://NC/Basic/current_rooms.tscn" id="12_306vr"]
+[ext_resource type="PackedScene" uid="uid://dq3vb1yb3gsg5" path="res://NC/Basic/current_rooms.tscn" id="12_306vr"]
 [ext_resource type="PackedScene" uid="uid://57e2le4rjltr" path="res://NC/Basic/unit_maker.tscn" id="13_e883s"]
+[ext_resource type="PackedScene" uid="uid://c2e0ry03cydno" path="res://NC/Basic/map.tscn" id="13_m4k86"]
+[ext_resource type="PackedScene" uid="uid://4swr0hptrl36" path="res://NC/Basic/moving_hand.tscn" id="14_d4046"]
 [ext_resource type="PackedScene" uid="uid://rwypjrwlawly" path="res://NC/Basic/holding_hand.tscn" id="14_m4k86"]
 [ext_resource type="Texture2D" uid="uid://1v4vaf00bgbe" path="res://icon.svg" id="17_8tocs"]
-[ext_resource type="PackedScene" uid="uid://bgqd8oufvbngq" path="res://NC/Basic/summon_map.tscn" id="18_3ydcl"]
+[ext_resource type="PackedScene" uid="uid://bweq48tovw4dn" path="res://NC/Basic/summon_map.tscn" id="18_3ydcl"]
 [ext_resource type="PackedScene" uid="uid://bo8w1c5c0carg" path="res://NC/Basic/mouse_hit.tscn" id="35_bu521"]
-[ext_resource type="PackedScene" uid="uid://dpx233wphb1xr" path="res://NC/Basic/pockets.tscn" id="35_r3ew1"]
+[ext_resource type="PackedScene" uid="uid://dpx233wphb1xr" path="res://NC/Basic/bag.tscn" id="35_r3ew1"]
 
 [node name="OtherMain" type="Node2D"]
 script = ExtResource("1_s1dh6")
@@ -52,3 +54,8 @@ texture = ExtResource("17_8tocs")
 
 [node name="SummonMap" parent="." instance=ExtResource("18_3ydcl")]
 position = Vector2(178, 213)
+
+[node name="Map" parent="." instance=ExtResource("13_m4k86")]
+position = Vector2(168, -15)
+
+[node name="MovingHand" parent="." instance=ExtResource("14_d4046")]

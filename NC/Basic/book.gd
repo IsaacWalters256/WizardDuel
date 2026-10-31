@@ -1,4 +1,9 @@
 extends Node2D
 
 var what_is = "book"
-pass#can put units on the book but can't turn the book while they are on there
+var main
+var pauser
+
+func start(main_ref,pauser_ref):
+	main = main_ref
+	pauser = pauser_ref

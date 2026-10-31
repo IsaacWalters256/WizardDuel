@@ -1,14 +1,26 @@
 extends Node2D
 
-func start():
-	pass
+var main
+var pauser
+
+func start(main_ref,pauser_ref):
+	main = main_ref
+	pauser = pauser_ref
 
 func new_action(type):
 	pass#type could be new day which folds it out and places new cards
 	#end day which calcualtes the cards in a damaging way
 	#switch room which lets the player click one of the buttons to move there.
 
-
+func new_day():
+	var t = pauser.get_tween(self)
+	get_node("Rotation").scale.x = 0.1 #replace this with the unfolding animation
+	get_node("Rotation").rotation_degrees = 90
+	t.tween_property(get_node("Rotation"),"rotation_degrees",deg_to_rad(0),1)
+	t.tween_property(get_node("Rotation"),"scale",Vector2(1,1),1)
+	t.tween_callback(main.current_rooms.exit_room)
+	t.tween_callback(main.map_summon.change_lock.bind(false))
+	#t.tween_callback(main.)#we don't actually need to callback for this, we are good
 
 
 func create_deck():#for refrence
