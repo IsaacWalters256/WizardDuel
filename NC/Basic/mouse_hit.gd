@@ -45,8 +45,9 @@ func change_icon(new):
 func _process(delta: float) -> void:
 	self.position = get_global_mouse_position()
 	if Input.is_action_just_pressed("select"):
+		print(current_selected)
 		if current_selected == "summon_map":
-			
+			main.map.toggle_map()
 		
 		#if current_selected == "map_card":
 			#get_parent().enter_card(current_selected_ref.get_parent())
@@ -72,15 +73,21 @@ func _process(delta: float) -> void:
 
 
 func update_selected(new_selection):
-	var current_selected = current_areas.keys()[0].what_is
-	var ap = current_areas.keys()[0]
-	if new_selection:
-		ap = new_selection
-		what_is = new_selection.what_is
+	if current_areas.keys().size() > 0:
+		var current_selected = current_areas.keys()[0].what_is
+		var ap = current_areas.keys()[0]
+		if new_selection:
+			ap = new_selection
+			what_is = new_selection.what_is
+		
+		if current_selected == "summon_map":
+			current_selected_ref = ap
+			change_icon("look")
 	
-	if current_selected == "summon_map":
-		current_selected_ref = ap
-		change_icon("look")
+	else:
+		current_selected_ref = null
+		current_selected = "none"
+		change_icon("default")
 	
 	#if what_is == "map_card":
 		#if area.get_parent().face_down == false && area.get_parent().get_parent().get_parent().is_in_room == false:
@@ -122,5 +129,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	update_selected(ap)
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
+	current_areas.erase(area.get_parent())
 	update_selected(null)
 	

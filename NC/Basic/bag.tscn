@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpx233wphb1xr"]
+[gd_scene load_steps=6 format=3 uid="uid://bg476lbec5klp"]
 
 [ext_resource type="Script" uid="uid://uhvqal3sweuw" path="res://NC/Basic/bag.gd" id="1_45c3n"]
 [ext_resource type="Texture2D" uid="uid://ba027qtvggkcv" path="res://Art/UISprites/potions-Sheet.png" id="1_vota3"]

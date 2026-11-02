@@ -2,6 +2,7 @@ extends Node2D
 
 var main
 var pauser
+var locked = false
 
 func start(main_ref,pauser_ref):
 	main = main_ref
@@ -32,6 +33,29 @@ func create_deck():#for refrence
 	deck.shuffle()
 	#card_order = deck
 
+func click_on_a_card(which):
+	main.current_rooms.enter_card()
+	#do our animation for putting the card there?
+	toggle_map()
+
+func toggle_map():
+	if get_node("Rotation").rotation_degrees != 0:
+		var t = pauser.get_tween(self)
+		#get_node("Rotation").scale.x = 0.1 #replace this with the unfolding animation
+		#get_node("Rotation").rotation_degrees = 90
+		t.tween_property(get_node("Rotation"),"rotation_degrees",deg_to_rad(0),1)
+		t.tween_property(get_node("Rotation"),"scale",Vector2(1,1),1)
+		t.tween_callback(main.current_rooms.exit_room)
+		t.tween_callback(self.change_lock.bind(false))
+	else:
+		var t = pauser.get_tween(self)
+		t.tween_property(get_node("Rotation"),"rotation_degrees",deg_to_rad(90),1)
+		t.tween_property(get_node("Rotation"),"scale",Vector2(0,1),1)
+		t.tween_callback(main.current_rooms.exit_room)
+		t.tween_callback(self.change_lock.bind(true))
+
+func change_lock(new):
+	locked = new
 
 #this stuff wont be part of the rotation
 #func enter_card(which):
